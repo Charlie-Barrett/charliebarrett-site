@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/pages/design-yours.css';
+import body from '../partials/design-yours.html?raw';
+const schema = null;
+---
+<Layout title="Design your module | Luxury Modules (Draft v0.1)" description="" schema={schema}>
+  <div class="pg-design-yours"><Fragment set:html={body} /></div>
+</Layout>

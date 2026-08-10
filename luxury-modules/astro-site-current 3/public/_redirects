@@ -1,0 +1,5 @@
+# Cloudflare Pages redirects (Vercel: translate to vercel.json "redirects")
+/modules.html /products/ 301
+/contact.html /book-a-call/ 301
+/qualify.html /start-your-project/ 301
+# Add hobbithouses.co.uk domain redirects here once the consolidation decision is made.

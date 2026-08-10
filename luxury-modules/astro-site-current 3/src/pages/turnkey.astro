@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/pages/turnkey.css';
+import body from '../partials/turnkey.html?raw';
+const schema = null;
+---
+<Layout title="Turnkey Garden Rooms: Everything Included | Luxury Modules" description="What turnkey actually means: groundworks, install, connections, finish and planning, all handled. Compare what is included module by module." schema={schema}>
+  <div class="pg-turnkey"><Fragment set:html={body} /></div>
+</Layout>

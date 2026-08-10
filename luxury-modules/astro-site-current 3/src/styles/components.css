@@ -1,0 +1,64 @@
+*{margin:0;padding:0;box-sizing:border-box}
+.imgph{position:relative;background:linear-gradient(135deg,#33415e 0%,#4a5d43 100%);color:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.imgph .ico{font-size:40px;opacity:.35}
+.imgph.hero{height:420px}
+.imgph.half{height:320px}
+img.real{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+section{padding:72px 24px}
+.wrap{max-width:1200px;margin:0 auto}
+.kicker{color:var(--gold);letter-spacing:.22em;text-transform:uppercase;font-size:12px;font-weight:700;margin-bottom:12px}
+h2{font-size:40px;color:var(--navy);margin-bottom:16px}
+.lead{font-size:19.5px;color:#4b5563;max-width:720px}
+.grid{display:grid;gap:24px}
+.cols3{grid-template-columns:repeat(3,1fr)}
+.cols2{grid-template-columns:repeat(2,1fr)}
+.cols4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.cols3,.cols4,.cols2{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid #e5e0d5;border-radius:3px;overflow:hidden;display:flex;flex-direction:column}
+.card .imgph{height:210px}
+.card .body{padding:22px;flex:1;display:flex;flex-direction:column}
+.card h3{font-size:24px;color:var(--navy)}
+.card .size{color:var(--gold);font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin:2px 0 10px}
+.card p{font-size:15.5px;color:#4b5563;flex:1}
+.price{margin-top:14px;font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--navy);font-weight:700}
+.price small{font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--muted);font-weight:400}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);text-decoration:none;padding:14px 28px;border-radius:2px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:13.5px;border:none;cursor:pointer}
+.btn:hover{background:var(--gold2)}
+.btn.ghost{background:transparent;border:1px solid var(--gold);color:var(--gold2)}
+.btn.ghost:hover{background:rgba(201,162,75,.12)}
+.btn.dark{background:var(--navy);color:#fff}
+.navy-band{background:var(--navy);color:#fff}
+.navy-band h2{color:#fff}
+.navy-band .lead{color:#c7cede}
+.gold-rule{width:64px;height:3px;background:var(--gold);margin:18px 0 26px}
+.pagehero{background:var(--navy);color:#fff;padding:80px 24px 64px;text-align:center}
+.pagehero h1{font-size:clamp(36px,5vw,56px)}
+.pagehero p{color:#c7cede;max-width:680px;margin:16px auto 0}
+.pagehero .price-anchor{margin-top:18px;font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold2);font-weight:700}
+.strip{background:var(--navy2);color:#c7cede;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:12px 18px}
+.strip b{color:var(--gold2);font-weight:700}
+table.spec{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e5e0d5;font-size:15px}
+table.spec th{background:var(--navy);color:#fff;text-align:left;padding:12px 14px;font-weight:600;letter-spacing:.04em}
+table.spec td{padding:12px 14px;border-top:1px solid #eee7d8;color:#4b5563;vertical-align:top}
+table.spec tr td:first-child{font-weight:600;color:var(--navy)}
+.tablewrap{overflow-x:auto}
+.faq-item{background:#fff;border:1px solid #e5e0d5;border-radius:3px;padding:22px 26px;margin-bottom:12px}
+.faq-item h3{font-size:21px;color:var(--navy);margin-bottom:6px}
+.faq-item p{font-size:15.5px;color:#4b5563}
+.ctaband{background:var(--navy);color:#fff;text-align:center;padding:72px 24px}
+.ctaband h2{color:#fff}
+.ctaband p{color:#c7cede;max-width:620px;margin:0 auto 28px}
+.ctaband .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.step{display:flex;gap:22px;background:#fff;border:1px solid #e5e0d5;border-radius:3px;padding:26px;margin-bottom:14px;align-items:flex-start}
+.step .num{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--gold);font-weight:700;line-height:1;min-width:44px}
+.step h3{font-size:23px;color:var(--navy);margin-bottom:4px}
+.step p{font-size:15.5px;color:#4b5563}
+.included{background:#fff;border:1px solid #e5e0d5;border-radius:3px;padding:36px;margin-top:8px}
+.included ul{columns:2;gap:40px;list-style:none;font-size:14.5px;color:#4b5563}
+@media(max-width:760px){.included ul{columns:1}}
+.included li{padding:5px 0 5px 24px;position:relative;break-inside:avoid}
+.included li:before{content:"\2713";position:absolute;left:0;color:var(--gold);font-weight:700}
+.vatnote{font-size:13px;color:var(--muted);margin-top:26px;font-style:italic}
+/* gallery images placed directly in grids need intrinsic height */
+.grid > .imgph{min-height:260px}
+.imgph.contain img.real{object-fit:contain;background:#fff}

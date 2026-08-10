@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/components.css';
+const schema = {"@context": "https://schema.org", "@type": "Organization", "name": "Luxury Modules", "url": "https://luxurymodules.co.uk", "memberOf": {"@type": "Organization", "name": "Revonia"}, "description": "Official UK partner of Revonia: 1,500+ projects, 25-year structural warranty."};
+---
+<Layout title="The Revonia Partnership: 1,500+ Projects | Luxury Modules" description="Luxury Modules is the official UK partner of Revonia: 1,500+ projects across Europe, 25-year structural warranty and a century of Estonian craft." schema={schema}>
+<div class="pagehero">
+  <p class="kicker">The Proof Engine</p>
+  <h1>Built on 1,500 projects: the Revonia partnership</h1>
+  <p>Luxury Modules is the official UK partner of Revonia — 1,500+ projects across Europe, a 25-year structural warranty, and a century of Estonian craft in vaulted concrete.</p>
+  
+  <div style="margin-top:28px"><a class="btn" href="/book-a-call/">Book a Scoping Call</a> <a class="btn ghost" href="#brochure" style="margin-left:8px">Download Brochure</a></div>
+</div>
+<div class="strip">Official UK Partner of <b>Revonia</b> &nbsp;&middot;&nbsp; <b>1,500+</b> projects across Europe &nbsp;&middot;&nbsp; <b>25-year</b> structural warranty &nbsp;&middot;&nbsp; Planning <b>handled for you</b></div>
+<div class="imgph hero"><img class="real" src="/images/revonia-house-solution-concept-2026-5-.png" alt="Revonia vaulted house concept build"><span class="lbl">ASSET IN FOLDER → ../Revonia house solution concept 2026 (5).png (temp — needs factory/craft photography from Revonia press kit)</span></div>
+<section><div class="wrap">
+  <p class="kicker">The Maker</p><h2>Who Revonia are</h2><div class="gold-rule"></div>
+  <p class="lead">Revonia grew out of the Estonian tradition of vaulted earth cellars — structures built by hand a thousand years ago that are still dry, still standing, still in use. Today that craft is precision-precast: vaulted concrete modules engineered, cured and finished in the factory, then delivered across Europe. More than 1,500 projects sit in the ground already.</p>
+</div></section>
+
+<section class="navy-band"><div class="wrap">
+  <p class="kicker">What It Means For You</p><h2>What the partnership means for you</h2><div class="gold-rule"></div>
+  <div class="grid cols3">
+    <div class="card"><div class="body"><h3>Official UK partner</h3><p>Factory-direct product, UK delivery, one accountable team from scoping call to aftercare.</p></div></div>
+    <div class="card"><div class="body"><h3>Proven at scale</h3><p>You are buying build number 1,500-and-something, not a prototype. The engineering questions were answered years ago.</p></div></div>
+    <div class="card"><div class="body"><h3>Local delivery</h3><p>UK planning, UK groundworks, UK aftercare — handled here, by us, with the factory behind us.</p></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">In Writing</p><h2>The 25-year warranty</h2><div class="gold-rule"></div>
+  <p class="lead">Every structure carries a 25-year structural warranty covering the concrete modules and their integrity — the parts of the building designed to last a century. Fittings and appliances carry their manufacturers' warranties on top. Plainly written, handed over at completion.</p>
+</div></section>
+
+<section style="background:#efe9db"><div class="wrap">
+  <p class="kicker">The Record</p><h2>1,500 projects and counting</h2><div class="gold-rule"></div>
+  <div class="grid cols3">
+  <div class="imgph "><img class="real" src="/images/the-nest-wildlands-.jpg" alt="The Nest at The Wildlands, Suffolk"><span class="lbl">STAND-IN: the-nest-wildlands-.jpg — stand-in for first draft</span></div><div class="imgph "><img class="real" src="/images/sauna-exterior.webp" alt="Cave sauna install with earth covering"><span class="lbl">STAND-IN: sauna-exterior.webp — stand-in for first draft</span></div><div class="imgph "><img class="real" src="/images/cellar-homepage.jpeg" alt="Vaulted cellar interior"><span class="lbl">STAND-IN: cellar-homepage.jpeg — stand-in for first draft</span></div>
+  </div>
+  <p style="margin-top:22px;font-size:14px;color:var(--muted)">A full UK projects gallery is coming as installs complete. <!-- BUILD NOTE: links to /projects/ once the gallery page exists (Phase 2). --></p>
+</div></section>
+<section class="ctaband" id="cta">
+  <h2>Proof you can stand inside</h2>
+  <p>Download the brochure for the full Revonia story — heritage, factory, warranty — in print quality.</p>
+  <div class="btns"><a class="btn" href="#brochure">Download the Brochure</a><a class="btn ghost" href="/book-a-call/">Book a Scoping Call</a></div>
+  
+  <!-- BUILD NOTE: brochure CTA = HubSpot email-only form (hidden fields: product_interest, product_range, audience_type, source_page_url). Scoping CTA -> contact.html until /book-a-call/ with calendar embed exists. -->
+</section>
+</Layout>

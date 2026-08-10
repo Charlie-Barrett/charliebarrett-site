@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/components.css';
+const schema = null;
+---
+<Layout title="Garden Room Costs & Prices: From-Pricing | Luxury Modules" description="What our garden rooms, cellars, saunas and homes cost: honest from-pricing by range, what is included, and why final pricing follows a site assessment." schema={schema}>
+<div class="pagehero">
+  <p class="kicker">Honest Numbers</p>
+  <h1>What it costs: from-pricing by range</h1>
+  <p>How much does a garden room cost? Ours run from £25,000 for a vaulted cellar to £275,000 for an 80m² underground home, turnkey. Every price on this page includes groundworks, install, connections and landscaping.</p>
+  
+  <div style="margin-top:28px"><a class="btn" href="/book-a-call/">Book a Scoping Call</a> <a class="btn ghost" href="#brochure" style="margin-left:8px">Download Brochure</a></div>
+</div>
+<div class="strip">Official UK Partner of <b>Revonia</b> &nbsp;&middot;&nbsp; <b>1,500+</b> projects across Europe &nbsp;&middot;&nbsp; <b>25-year</b> structural warranty &nbsp;&middot;&nbsp; Planning <b>handled for you</b></div>
+<div class="imgph hero"><img class="real" src="/images/modular-30-exterior.jpg" alt="Lakeside earth-sheltered home: the range's beauty shot"><span class="lbl">STAND-IN: modular-30-exterior.jpg — </span></div>
+<section><div class="wrap">
+  <p class="kicker">The Direct Answer</p><h2>How much does a garden room cost?</h2><div class="gold-rule"></div>
+  <p class="lead">Our garden rooms and living spaces start at &pound;45,000 turnkey; cellars at &pound;25,000; saunas at &pound;30,000; full underground homes at &pound;99,000&ndash;&pound;275,000. Turnkey packages work out from around &pound;3,250 per square metre. Every site is different — final pricing follows the scoping call and site assessment.</p>
+</div></section>
+
+<section class="navy-band"><div class="wrap">
+  <p class="kicker">The Core</p><h2>From-pricing by range</h2><div class="gold-rule"></div>
+  <div class="tablewrap"><table class="spec">
+    <tr><th>Range</th><th>Size</th><th>Best for</th><th>From-price</th></tr>
+    <tr><td><a href="/products/small-living-spaces/" style="color:var(--navy)">Small Living</a></td><td>10–29m&sup2;</td><td>Offices, gyms, guest pods, compact annexes</td><td>&pound;45,000</td></tr>
+    <tr><td><a href="/products/medium-living-spaces/" style="color:var(--navy)">Medium Living</a></td><td>30–40m&sup2;</td><td>1–2 bed annexes and homes</td><td>&pound;99,000</td></tr>
+    <tr><td><a href="/products/large-living-spaces/" style="color:var(--navy)">Large Living</a></td><td>60–80m&sup2;</td><td>Full family underground houses</td><td>&pound;199,000</td></tr>
+    <tr><td><a href="/products/vaulted-cellars/" style="color:var(--navy)">Vaulted Cellars</a></td><td>4.5–21.4m&sup2;</td><td>Wine, whisky and produce cellars</td><td>&pound;25,000</td></tr>
+    <tr><td><a href="/products/cave-saunas/" style="color:var(--navy)">Cave Saunas</a></td><td>4.5–23.9m&sup2;</td><td>Saunas, spas and wellness suites</td><td>&pound;30,000</td></tr>
+  </table></div>
+  <p style="margin-top:18px;font-size:13px;color:#8b95ab">All prices exclude VAT and are indicative from-prices, updated January 2026. Model-level options are listed on <a href="/products/" style="color:var(--gold2)">Our Modules</a>.</p>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">No Asterisks</p><h2>What's included in the price</h2><div class="gold-rule"></div>
+  <p class="lead" style="margin-bottom:26px">Module, geomembrane waterproofing, kitchen and bathroom fit-outs where specified, underfloor heating, planning administration, site survey, groundworks, delivery, craning, connections, landscaping and aftercare. The full item-by-item list is on <a href="/turnkey/" style="color:var(--navy);font-weight:600">what's included</a>.</p>
+</div></section>
+
+<section style="background:#efe9db"><div class="wrap">
+  <p class="kicker">The Honesty Section</p><h2>Why we don't publish full price lists</h2><div class="gold-rule"></div>
+  <p class="lead">Groundworks, access and specification genuinely vary from site to site — publishing a configured total we might have to walk back would be marketing, not pricing. So we publish honest from-prices, confirm the real number after the scoping call and site assessment, and put the full January 2026 price list in the brochure where it can be versioned properly.</p>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">By Use</p><h2>Cost by use</h2><div class="gold-rule"></div>
+  <div class="grid cols3">
+    <div class="card"><div class="body"><h3>Garden office cost</h3><p>From &pound;45,000 turnkey in the Small Living range. <a href="/spaces/garden-office/" style="color:var(--navy);font-weight:600">Garden office &rarr;</a></p></div></div>
+    <div class="card"><div class="body"><h3>Garden gym cost</h3><p>From &pound;45,000 turnkey, fitted for training. <a href="/spaces/garden-gym/" style="color:var(--navy);font-weight:600">Garden gym &rarr;</a></p></div></div>
+    <div class="card"><div class="body"><h3>Annexe cost</h3><p>From &pound;75,000 compact; from &pound;99,000 for 1–2 beds. <a href="/spaces/garden-annexe/" style="color:var(--navy);font-weight:600">Annexe &rarr;</a></p></div></div>
+  </div>
+  <!-- BUILD NOTE: pricing-page visit fires HubSpot behavioural lead-score trigger per CRM spec. -->
+</div></section>
+<section class="ctaband" id="cta">
+  <h2>Your number, not a number</h2>
+  <p>The scoping call turns a from-price into your price — site, spec and groundworks included, in writing.</p>
+  <div class="btns"><a class="btn" href="/book-a-call/">Book a Scoping Call</a><a class="btn ghost" href="#brochure">Download the Brochure</a></div>
+  
+  <!-- BUILD NOTE: brochure CTA = HubSpot email-only form (hidden fields: product_interest, product_range, audience_type, source_page_url). Scoping CTA -> contact.html until /book-a-call/ with calendar embed exists. -->
+</section>
+</Layout>

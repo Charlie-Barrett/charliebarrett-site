@@ -1,0 +1,78 @@
+.pg-hobbit-houses{font-family:'Source Sans 3',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;font-size:17px}
+.pg-hobbit-houses h1, .pg-hobbit-houses h2, .pg-hobbit-houses h3, .pg-hobbit-houses .serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600}
+.pg-hobbit-houses section{padding:72px 24px}
+.pg-hobbit-houses .wrap{max-width:1200px;margin:0 auto}
+.pg-hobbit-houses .kicker{color:var(--gold);letter-spacing:.22em;text-transform:uppercase;font-size:12px;font-weight:700;margin-bottom:12px}
+.pg-hobbit-houses h2{font-size:40px;color:var(--navy);margin-bottom:16px}
+.pg-hobbit-houses .lead{font-size:19.5px;color:#4b5563;max-width:720px}
+.pg-hobbit-houses .grid{display:grid;gap:24px}
+.pg-hobbit-houses .cols3{grid-template-columns:repeat(3,1fr)}
+.pg-hobbit-houses .cols2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.pg-hobbit-houses .cols3, .pg-hobbit-houses .cols2{grid-template-columns:1fr}}
+.pg-hobbit-houses .card{background:#fff;border:1px solid #e5e0d5;border-radius:3px;overflow:hidden;display:flex;flex-direction:column}
+.pg-hobbit-houses .card .img{height:250px;overflow:hidden}
+.pg-hobbit-houses .card .img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.pg-hobbit-houses .card:hover .img img{transform:scale(1.04)}
+.pg-hobbit-houses .card .body{padding:22px;flex:1;display:flex;flex-direction:column}
+.pg-hobbit-houses .card h3{font-size:24px;color:var(--navy)}
+.pg-hobbit-houses .card p{font-size:15.5px;color:#4b5563;flex:1}
+.pg-hobbit-houses .btn{display:inline-block;background:var(--gold);color:var(--navy);text-decoration:none;padding:14px 28px;border-radius:2px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:13.5px;border:none;cursor:pointer}
+.pg-hobbit-houses .btn:hover{background:var(--gold2)}
+.pg-hobbit-houses .btn.ghost{background:transparent;border:1px solid var(--gold);color:var(--gold2)}
+.pg-hobbit-houses .btn.ghost:hover{background:rgba(201,162,75,.12)}
+.pg-hobbit-houses .btn.dark{background:var(--navy);color:#fff}
+.pg-hobbit-houses .navy-band{background:var(--navy);color:#fff}
+.pg-hobbit-houses .navy-band h2{color:#fff}
+.pg-hobbit-houses .gold-rule{width:64px;height:3px;background:var(--gold);margin:18px 0 26px}
+.pg-hobbit-houses .diff{font-size:14px;font-weight:600;color:var(--gold);margin-top:6px}
+.pg-hobbit-houses .price{margin-top:14px;font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--navy);font-weight:700}
+.pg-hobbit-houses .price small{font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--muted);font-weight:400}
+.pg-hobbit-houses .hero{position:relative;height:82vh;min-height:560px;display:flex;align-items:center;color:#fff}
+.pg-hobbit-houses .hero .bgimg{position:absolute;inset:0;overflow:hidden}
+.pg-hobbit-houses .hero .bgimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-hobbit-houses .hero .inner{position:relative;max-width:1200px;margin:0 auto;padding:0 24px;width:100%}
+.pg-hobbit-houses .hero h1{font-size:clamp(40px,5.4vw,68px);line-height:1.08;max-width:900px;font-weight:700;text-shadow:0 2px 20px rgba(0,0,0,.45)}
+.pg-hobbit-houses .hero p{font-size:19px;max-width:560px;margin:20px 0 32px;text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.pg-hobbit-houses .figcap{font-size:12.5px;color:var(--muted);margin-top:8px}
+.pg-hobbit-houses .navy-band .figcap{color:#8b95ab}
+.pg-hobbit-houses .cmp{position:relative;border-radius:3px;overflow:hidden;aspect-ratio:3/2;max-height:560px;--pos:50%}
+.pg-hobbit-houses .cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.pg-hobbit-houses .cmp .top{clip-path:inset(0 0 0 var(--pos))}
+.pg-hobbit-houses .cmp .divider{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;background:var(--gold);transform:translateX(-50%);pointer-events:none;box-shadow:0 0 12px rgba(0,0,0,.35)}
+.pg-hobbit-houses .cmp .knob{position:absolute;top:50%;left:var(--pos);transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.4);pointer-events:none}
+.pg-hobbit-houses .cmp .lbl{position:absolute;top:16px;padding:6px 14px;border-radius:2px;background:rgba(22,34,59,.72);color:#fff;font-size:12px;letter-spacing:.14em;text-transform:uppercase;pointer-events:none;font-weight:600}
+.pg-hobbit-houses .cmp .lbl.sun{left:16px}
+.pg-hobbit-houses .cmp .lbl.snow{right:16px}
+.pg-hobbit-houses .cmp input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;-webkit-appearance:none;appearance:none;touch-action:pan-y}
+@media(max-width:900px){.pg-hobbit-houses .cmp{aspect-ratio:4/3}
+.pg-hobbit-houses .cmp .knob{width:46px;height:46px;font-size:19px}}
+.pg-hobbit-houses .glamp{position:relative;color:#fff}
+.pg-hobbit-houses .glamp .bg{position:absolute;inset:0;overflow:hidden}
+.pg-hobbit-houses .glamp .bg img{width:100%;height:100%;object-fit:cover}
+.pg-hobbit-houses .glamp .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,24,43,.88) 0%,rgba(16,24,43,.55) 55%,rgba(16,24,43,.18) 100%)}
+.pg-hobbit-houses .glamp .inner{position:relative;max-width:1200px;margin:0 auto;padding:110px 24px}
+.pg-hobbit-houses .glamp h2{color:#fff}
+.pg-hobbit-houses .step{background:#fff;border:1px solid #e5e0d5;padding:28px;border-radius:3px}
+.pg-hobbit-houses .step .num{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--gold);line-height:1}
+.pg-hobbit-houses .step h3{font-weight:700;font-size:26px;margin:10px 0 8px;color:var(--navy)}
+.pg-hobbit-houses .qbanner{background:linear-gradient(rgba(22,34,59,.88),rgba(22,34,59,.88));color:#fff;text-align:center}
+.pg-hobbit-houses .qbanner h2{color:#fff;font-size:44px}
+.pg-hobbit-houses table.sizes{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e5e0d5;border-radius:3px;overflow:hidden;margin-top:10px}
+.pg-hobbit-houses table.sizes th{background:var(--navy);color:#fff;font-family:'Source Sans 3',sans-serif;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;text-align:left;padding:14px 18px}
+.pg-hobbit-houses table.sizes td{padding:16px 18px;border-top:1px solid #eee8da;font-size:15.5px;vertical-align:top;color:#4b5563}
+.pg-hobbit-houses table.sizes td.range{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--navy)}
+.pg-hobbit-houses table.sizes td.from{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--navy);white-space:nowrap}
+.pg-hobbit-houses table.sizes a{color:var(--navy);font-weight:600}
+@media(max-width:900px){.pg-hobbit-houses table.sizes, .pg-hobbit-houses table.sizes tbody, .pg-hobbit-houses table.sizes tr, .pg-hobbit-houses table.sizes td{display:block}
+.pg-hobbit-houses table.sizes thead{display:none}
+.pg-hobbit-houses table.sizes tr{border-top:2px solid var(--gold);padding:8px 0}
+.pg-hobbit-houses table.sizes td{border-top:none;padding:6px 18px}}
+.pg-hobbit-houses .faq details{background:#fff;border:1px solid #e5e0d5;border-radius:3px;margin-bottom:12px;padding:0 22px}
+.pg-hobbit-houses .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0}
+.pg-hobbit-houses .faq summary::-webkit-details-marker{display:none}
+.pg-hobbit-houses .faq summary h3{font-size:24px;color:var(--navy);font-weight:600}
+.pg-hobbit-houses .faq summary:after{content:"+";font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--gold);line-height:1;flex:0 0 auto}
+.pg-hobbit-houses .faq details[open] summary:after{content:"–"}
+.pg-hobbit-houses .faq details p{padding:0 0 20px;font-size:15.5px;color:#4b5563;max-width:860px}
+.pg-hobbit-houses .truststrip{display:flex;justify-content:center;gap:14px 34px;flex-wrap:wrap;margin-top:34px;padding-top:26px;border-top:1px solid rgba(224,188,106,.3);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#c7cede}
+.pg-hobbit-houses .truststrip b{color:var(--gold2)}

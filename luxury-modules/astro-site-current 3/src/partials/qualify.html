@@ -1,0 +1,136 @@
+<section style="padding-top:56px">
+  <div class="qshell">
+    <p class="kicker" style="text-align:center">The Project Checker</p>
+    <h2 style="text-align:center;font-size:42px">Three questions. An honest answer.</h2>
+    <p style="text-align:center;color:var(--muted);max-width:560px;margin:10px auto 0">Every Luxury Modules project stands on three things: land, planning and budget. Tell us where you are on each and we'll show you the right next step, even if that step is "not yet".</p>
+
+    <div class="progress"><div class="pbar on" id="pb1"></div><div class="pbar" id="pb2"></div><div class="pbar" id="pb3"></div></div>
+
+    <!-- STEP 1 : LAND -->
+    <div class="qcard" id="step1">
+      <p class="kicker">Question 1 of 3</p>
+      <h2>Do you have land for your project?</h2>
+      <div class="opts">
+        <label class="opt" onclick="answer('land','own')"><b>Yes, I own the land</b><small>A garden, paddock, plot or estate you control today.</small></label>
+        <label class="opt" onclick="answer('land','buying')"><b>I'm in the process of buying land</b><small>Offer made, completing soon, or actively searching with budget set aside.</small></label>
+        <label class="opt" onclick="answer('land','none')"><b>Not yet</b><small>I love the concept but don't have anywhere to put it.</small></label>
+      </div>
+    </div>
+
+    <!-- STEP 2 : PLANNING -->
+    <div class="qcard hidden" id="step2">
+      <p class="kicker">Question 2 of 3</p>
+      <h2>Where are you with planning permission?</h2>
+      <div class="opts">
+        <label class="opt" onclick="answer('planning','granted')"><b>Granted, or not required</b><small>Permission is in place, or the build qualifies as Permitted Development.</small></label>
+        <label class="opt" onclick="answer('planning','progress')"><b>Application in progress</b><small>Submitted and awaiting a decision from the local authority.</small></label>
+        <label class="opt" onclick="answer('planning','none')"><b>Not started / I don't know</b><small>Most clients start here. Our turnkey package manages the whole planning process.</small></label>
+      </div>
+      <button class="back" onclick="goTo(1)">← Back</button>
+    </div>
+
+    <!-- STEP 3 : BUDGET -->
+    <div class="qcard hidden" id="step3">
+      <p class="kicker">Question 3 of 3</p>
+      <h2>What's your all-in budget?</h2>
+      <p style="color:var(--muted);font-size:14.5px;margin-top:6px">Turnkey pricing includes the module, delivery, installation, connections and landscaping. Prices exclude VAT.</p>
+      <div class="opts">
+        <label class="opt" onclick="answer('budget','b1')"><b>Under £25,000</b><small>Below our current entry point, but we'd love to stay in touch.</small></label>
+        <label class="opt" onclick="answer('budget','b2')"><b>£25,000 – £75,000</b><small>Vaulted cellars, cave saunas and compact living spaces.</small></label>
+        <label class="opt" onclick="answer('budget','b3')"><b>£75,000 – £150,000</b><small>Small and medium living spaces, larger saunas and combinations.</small></label>
+        <label class="opt" onclick="answer('budget','b4')"><b>£150,000+</b><small>Large living spaces, Modular A, multi-module and custom projects.</small></label>
+      </div>
+      <button class="back" onclick="goTo(2)">← Back</button>
+    </div>
+
+    <!-- RESULT : QUALIFIED -->
+    <div class="qcard hidden" id="res-qualified">
+      <span class="result-badge rb-green">✓ Your project is viable</span>
+      <h2 id="rq-title">Let's build it.</h2>
+      <p id="rq-planningline" style="margin-top:10px;color:#4b5563"></p>
+      <div class="recs" id="rq-recs"></div>
+      <p style="color:#4b5563">The next step is a free discovery call with Stuart: your land's potential, realistic costs and honest timescales. Then a site visit if it makes sense. No pressure, no obligation.</p>
+      <div style="margin-top:26px">
+        <a class="btn" href="/book-a-call/">Book a free discovery call</a>
+        &nbsp;&nbsp;<a class="btn ghost" style="border-color:var(--navy);color:var(--navy)" href="/products/">Browse modules first</a>
+      </div>
+      <p class="note">Typical journey: discovery call → site visit → £2,000 refundable design deposit → drawings, planning &amp; quotation → build.</p>
+      <button class="back" onclick="restart()">↺ Start again</button>
+    </div>
+
+    <!-- RESULT : NO LAND -->
+    <div class="qcard hidden" id="res-noland">
+      <span class="result-badge rb-amber">Land comes first</span>
+      <h2>Beautiful spaces need somewhere to live.</h2>
+      <p style="margin-top:10px;color:#4b5563">We'll be straight with you: without land, there's nothing we can build yet, and we'd rather tell you that now than waste your time. But most of our clients started exactly where you are.</p>
+      <p style="margin-top:12px;color:#4b5563">Leave your email and we'll send you our free guide, <b>"Finding Land for a Modular Build in the UK"</b>, covering plot-finding services, what makes a site suitable, access requirements and typical land costs by region. When you find your plot, we'll be ready.</p>
+      <div class="emailrow">
+        <input type="email" placeholder="you@email.co.uk" aria-label="Email">
+        <button class="btn dark" onclick="this.textContent='✓ Sent'">Send the land guide</button>
+      </div>
+      <button class="back" onclick="restart()">↺ Start again</button>
+    </div>
+
+    <!-- RESULT : BUDGET LOW -->
+    <div class="qcard hidden" id="res-budget">
+      <span class="result-badge rb-amber">Not quite yet</span>
+      <h2>Honesty over hype: £25k is our starting line.</h2>
+      <p style="margin-top:10px;color:#4b5563">Our entry product, the 4.5m² Vaulted Cellar, starts at £25,000 turnkey. Below that we simply can't deliver the quality the Revonia name stands for, and we won't pretend otherwise.</p>
+      <p style="margin-top:12px;color:#4b5563">If your budget grows, or you'd like our brochure and price list to plan ahead, leave your email. We'll also let you know about any ex-display or showcase opportunities.</p>
+      <div class="emailrow">
+        <input type="email" placeholder="you@email.co.uk" aria-label="Email">
+        <button class="btn dark" onclick="this.textContent='✓ Sent'">Send brochure &amp; price list</button>
+      </div>
+      <button class="back" onclick="restart()">↺ Start again</button>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+const state={land:null,planning:null,budget:null};
+function answer(k,v){
+  state[k]=v;
+  if(k==='land'){ v==='none' ? showResult('res-noland') : goTo(2); }
+  else if(k==='planning'){ goTo(3); }
+  else if(k==='budget'){ v==='b1' ? showResult('res-budget') : showQualified(); }
+}
+function goTo(n){
+  ['step1','step2','step3','res-qualified','res-noland','res-budget'].forEach(id=>document.getElementById(id).classList.add('hidden'));
+  document.getElementById('step'+n).classList.remove('hidden');
+  for(let i=1;i<=3;i++) document.getElementById('pb'+i).classList.toggle('on',i<=n);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function showResult(id){
+  ['step1','step2','step3','res-qualified','res-noland','res-budget'].forEach(x=>document.getElementById(x).classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  for(let i=1;i<=3;i++) document.getElementById('pb'+i).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function restart(){ state.land=state.planning=state.budget=null; goTo(1); }
+function showQualified(){
+  const P={
+    granted:"Planning is already in place, which puts you on the fast track: delivery and installation in as little as 8–10 weeks from order.",
+    progress:"With your application in progress, we can prepare your build in parallel so modules land as soon as approval does.",
+    none:"No planning yet? That's where most clients start. Our turnkey package includes the full planning process: drawings, application, submission and liaison with your local authority. Typical end-to-end timeline: 6–7 months."
+  };
+  document.getElementById('rq-planningline').textContent=P[state.planning];
+  const R={
+    b2:[["Vaulted Cellars","4.5–21.4m² · from £25,000",""],
+        ["Cave Saunas","4.5–23.9m² · from £30,000",""],
+        ["Modular 10 / MINI / OPEN","10m² · from £45,000",""]],
+    b3:[["Modular 20 / PLUS 20","20m² · from £75,000",""],
+        ["Modular 30 (A–C)","30m² · from £99,000",""],
+        ["Modular 40 (A–C)","40m² · from £130,000",""]],
+    b4:[["Modular 60 (A–C)","60m² · from £199,000",""],
+        ["Modular 80","80m² · from £275,000",""],
+        ["Modular A &amp; Custom","from £150,000 / £POA",""]]
+  };
+  const titles={b2:"Your budget opens the classics.",b3:"Your budget builds a home.",b4:"Your budget builds a legacy."};
+  document.getElementById('rq-title').textContent=titles[state.budget];
+  document.getElementById('rq-recs').innerHTML=R[state.budget].map(r=>
+    `<div class="rec"><div class="imgph"></div><div class="rb"><b>${r[0]}</b><span>${r[1]}</span></div></div>`).join('');
+  showResult('res-qualified');
+}
+</script>

@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/components.css';
+const schema = {"@context": "https://schema.org", "@type": "HowTo", "name": "From idea to handover in four steps", "step": [{"@type": "HowToStep", "name": "Scoping call", "text": "Thirty minutes on your site, budget band and goals."}, {"@type": "HowToStep", "name": "Design & deposit", "text": "\u00a32,000 refundable design deposit starts survey and drawings."}, {"@type": "HowToStep", "name": "Planning, handled", "text": "We prepare, submit and manage the application; typically 12 weeks."}, {"@type": "HowToStep", "name": "Build & handover", "text": "8-10 week build window; modules installed in days."}]};
+---
+<Layout title="How It Works: Design to Handover in 4 Steps | Luxury Modules" description="From first call to handover: scoping, \u00a32,000 refundable design deposit, planning managed for you, then an 8-10 week build. See the full process." schema={schema}>
+<div class="pagehero">
+  <p class="kicker">The Process</p>
+  <h1>How it works: four steps from idea to handover</h1>
+  <p>From first call to keys in hand: one team designs it, gets it consented, builds it and lands it in your garden. Here is the whole journey, honestly timed.</p>
+  
+  <div style="margin-top:28px"><a class="btn" href="/book-a-call/">Book a Scoping Call</a> <a class="btn ghost" href="#brochure" style="margin-left:8px">Download Brochure</a></div>
+</div>
+<div class="strip">Official UK Partner of <b>Revonia</b> &nbsp;&middot;&nbsp; <b>1,500+</b> projects across Europe &nbsp;&middot;&nbsp; <b>25-year</b> structural warranty &nbsp;&middot;&nbsp; Planning <b>handled for you</b></div>
+<div class="imgph hero"><img class="real" src="/images/revonia-house-solution-concept-2026-5-.png" alt="Revonia vaulted house build concept"><span class="lbl">STAND-IN: revonia-house-solution-concept-2026-5-.png — replace with real crane/install photo</span></div>
+<section><div class="wrap">
+  <p class="kicker">Step by Step</p><h2>The four steps</h2><div class="gold-rule"></div>
+  <div class="step"><div class="num">1</div><div><h3>Scoping call</h3><p>Thirty minutes on your site, your budget band and what you want the space to do. If the fit is wrong, we say so on this call — it saves everyone months.</p></div></div>
+  <div class="step"><div class="num">2</div><div><h3>Design &amp; deposit</h3><p>A &pound;2,000 design deposit — <b>refundable</b>, plainly and in writing — starts site survey, imaging and detailed architectural drawings. You see exactly what you are buying before you commit to it.</p></div></div>
+  <div class="step"><div class="num">3</div><div><h3>Planning, handled</h3><p>We prepare and submit the application and manage the council conversation. Typically a 12-week window — you do nothing except stay excited. Detail in the <a href="/planning-permission/" style="color:var(--navy);font-weight:600">planning guide</a>.</p></div></div>
+  <div class="step"><div class="num">4</div><div><h3>Build &amp; handover</h3><p>Groundworks, craning, connection, landscaping: an 8–10 week window on site, with the modules themselves installed in days. Then the keys.</p></div></div>
+</div></section>
+
+<section class="navy-band"><div class="wrap">
+  <p class="kicker">Honestly Timed</p><h2>The full timeline</h2><div class="gold-rule"></div>
+  <div class="tablewrap"><table class="spec">
+    <tr><th>Weeks</th><th>What happens</th></tr>
+    <tr><td>1–2</td><td>Scoping call, site check, range and budget agreed</td></tr>
+    <tr><td>3–8</td><td>Design deposit, survey, drawings, final specification</td></tr>
+    <tr><td>9–20</td><td>Planning window — managed by us end to end</td></tr>
+    <tr><td>18–26</td><td>Build slot, groundworks, install, connections, landscaping, handover</td></tr>
+  </table></div>
+  <p style="margin-top:18px;font-size:13px;color:#8b95ab">Indicative for a typical single-module build; confirmed per project at design stage. <!-- MISSING ASSET: timeline graphic (weeks 1–26 visual) — commission for build --></p>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">No Surprises</p><h2>What's included at every step</h2><div class="gold-rule"></div>
+  <p class="lead" style="margin-bottom:26px">Survey, drawings, planning admin, groundworks, delivery, craning, connections, landscaping and aftercare are all inside the turnkey price. The full list, item by item, is on <a href="/turnkey/" style="color:var(--navy);font-weight:600">what's included</a>.</p>
+</div></section>
+<section class="ctaband" id="cta">
+  <h2>Step one takes thirty minutes</h2>
+  <p>The scoping call is the whole first step — no drawings, no deposit, just an honest conversation about your site.</p>
+  <div class="btns"><a class="btn" href="/book-a-call/">Book a Scoping Call</a><a class="btn ghost" href="#brochure">Download the Brochure</a></div>
+  
+  <!-- BUILD NOTE: brochure CTA = HubSpot email-only form (hidden fields: product_interest, product_range, audience_type, source_page_url). Scoping CTA -> contact.html until /book-a-call/ with calendar embed exists. -->
+</section>
+</Layout>

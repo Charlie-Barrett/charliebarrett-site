@@ -1,0 +1,9 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/pages/modules.css';
+import body from '../../partials/modules.html?raw';
+const schema = null;
+---
+<Layout title="Our Modules | Luxury Modules | Living Spaces, Vaulted Cellars &amp; Cave Saunas" description="Five ranges of luxury underground garden buildings: living spaces from 10-80m\u00b2, vaulted cellars and cave saunas. From-pricing, floorplans and options." schema={schema}>
+  <div class="pg-modules"><Fragment set:html={body} /></div>
+</Layout>

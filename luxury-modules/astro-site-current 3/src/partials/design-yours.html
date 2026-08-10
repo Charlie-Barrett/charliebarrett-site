@@ -1,0 +1,222 @@
+<header class="head">
+  <h1>Design your <em>prefabricated module</em></h1>
+  <p>Factory built, delivered complete and installed in a matter of hours. Configure your module, see your guide price, and reserve your build slot with a fully refundable fee.</p>
+  <ul class="usp">
+    <li>Plug and play install in hours</li>
+    <li>Reinforced concrete shell</li>
+    <li>25 year structural warranty</li>
+    <li>Energy efficient and eco friendly</li>
+    <li>Fully furnished Japandi interior</li>
+    <li>UK wide delivery</li>
+  </ul>
+</header>
+
+<div class="shell">
+  <div class="card">
+
+    <div class="stepbar">
+      <div class="title" id="stepTitle">Choose your module</div>
+      <div class="pills" id="pills"></div>
+    </div>
+
+    <div id="stage"></div>
+
+  </div>
+</div>
+
+<p class="draftnote">DRAFT v0.1 for internal review (Stu, Jamie, Rose). Guide price bands are placeholders pending verification against the 2026 brochure UK turnkey price list. No live payment processing. Imagery slots carry IMG-CFG reference codes for the proposed imagery list.</p>
+
+<script>
+/* ------------------------------------------------------------------
+   DATA  (guide bands = PLACEHOLDERS, verify against 2026 brochure)
+------------------------------------------------------------------- */
+const MODELS = [
+  {id:'mini', name:'MINI', size:'10 m²',
+   sub:'Private retreat with a full height arched glass entrance. Perfect for guest stays, studio or garden office.',
+   bandLow:48000, bandHigh:56000, img:'IMG-CFG-M1',
+   imgdesc:'Mini exterior render, arched glazed entrance, green roof, lakeside setting'},
+  {id:'open', name:'OPEN', size:'10 m²',
+   sub:'Entrance door and window combination. The most flexible way to add living space to a garden or plot.',
+   bandLow:48000, bandHigh:56000, img:'IMG-CFG-M2',
+   imgdesc:'Open exterior render, door and window combo, evening lighting, patio setting'},
+  {id:'plus', name:'PLUS', size:'20 m²',
+   sub:'Two entrances and an extra window. Designed as a standalone home for everyday living.',
+   bandLow:80000, bandHigh:92000, img:'IMG-CFG-M3',
+   imgdesc:'Plus exterior render, twin arched entrances, decked terrace, coastal setting'}
+];
+const ROOFS = [
+  {id:'shingle', name:'Wood shingles', sub:'Natural cedar, silvers gracefully with age', premium:0, img:'IMG-CFG-R1'},
+  {id:'green',   name:'Green roof',    sub:'Living sedum blanket, blends into the landscape', premium:0, img:'IMG-CFG-R2'},
+  {id:'steel',   name:'Steel roof',    sub:'Standing seam, crisp contemporary finish', premium:0, img:'IMG-CFG-R3'},
+  {id:'copper',  name:'Copper roof',   sub:'Patinas over decades, the signature premium option', premium:4000, img:'IMG-CFG-R4'}
+];
+const WALLS = [
+  {id:'darkhex',  name:'Dark hexagon',  sub:'Charcoal sculpted concrete panels', premium:0, img:'IMG-CFG-E1'},
+  {id:'lighthex', name:'Light hexagon', sub:'Pale stone toned concrete panels', premium:0, img:'IMG-CFG-E2'}
+];
+const INTERIORS = [
+  {id:'relax', name:'Relax', sub:'Bed centred layout for guest stays and retreats. Japandi palette, fully furnished.', premium:0, img:'IMG-CFG-I1'},
+  {id:'focus', name:'Focus', sub:'Desk centred layout for work from garden. Japandi palette, fully furnished.', premium:0, img:'IMG-CFG-I2'}
+];
+const RESERVATION_FEE = 2000;
+
+const state = {step:1, model:null, roof:null, wall:null, interior:null, maxVisited:1};
+const gbp = n => '£' + n.toLocaleString('en-GB');
+
+/* ------------------------------------------------------------------ */
+const TITLES = {1:'Choose your module',2:'Select your roof',3:'Select your exterior finish',4:'Select your interior',5:'Your module summary',6:'Reserve your build slot'};
+
+function pills(){
+  const el = document.getElementById('pills');
+  el.innerHTML='';
+  for(let i=1;i<=6;i++){
+    const p=document.createElement('div');
+    p.className='pill'+(i===state.step?' now':(i<=state.maxVisited?' done':''));
+    p.textContent=i;
+    if(i<=state.maxVisited && i!==state.step) p.onclick=()=>go(i);
+    el.appendChild(p);
+  }
+  document.getElementById('stepTitle').textContent=TITLES[state.step];
+}
+
+function optCard(o, selId, onpick, extra=''){
+  return `<div class="opt ${selId===o.id?'sel':''}" onclick="${onpick}('${o.id}')">
+    <div>
+      <div class="name">${o.name}${o.size?' <span style="font-weight:400;font-size:13px">· '+o.size+'</span>':''}</div>
+      <div class="sub">${o.sub}</div>
+      ${o.premium?`<span class="tag">Adds approx ${gbp(o.premium)} to guide band</span>`:''}
+      ${extra}
+    </div>
+    <div class="thumb">${o.img}</div>
+  </div>`;
+}
+
+function preview(img, desc){
+  return `<div class="right">
+    <div class="preview">
+      <div class="imgref">${img}</div>
+      <div class="serif" style="font-size:20px;color:#fff">Image placeholder</div>
+      <div class="desc">${desc}</div>
+    </div>
+    <div class="viewtabs"><button class="on">Exterior view</button><button>Inside view</button><button>Top view</button></div>
+  </div>`;
+}
+
+function controls(nextLabel, nextOk){
+  return `<div class="controls">
+    <button class="btn ghost" ${state.step===1?'disabled':''} onclick="go(state.step-1)">Back</button>
+    <button class="btn gold" ${nextOk?'':'disabled'} onclick="go(state.step+1)">${nextLabel}</button>
+  </div>`;
+}
+
+function pickerStep(list, key, q){
+  const sel = state[key];
+  const cur = list.find(x=>x.id===sel) || list[0];
+  return `<div class="body">
+    <div class="left">
+      <div class="q">${q}</div>
+      ${list.map(o=>optCard(o, sel, 'pick_'+key)).join('')}
+    </div>
+    ${preview(cur.img, cur.imgdesc || (cur.name+' option render'))}
+  </div>` + controls('Next', !!sel);
+}
+
+window.pick_model   = id=>{state.model=id;   render();};
+window.pick_roof    = id=>{state.roof=id;    render();};
+window.pick_wall    = id=>{state.wall=id;    render();};
+window.pick_interior= id=>{state.interior=id;render();};
+
+function bandFor(){
+  const m = MODELS.find(x=>x.id===state.model);
+  const prem = (ROOFS.find(x=>x.id===state.roof)?.premium)||0;
+  return {low:m.bandLow+prem, high:m.bandHigh+prem};
+}
+
+function summaryStep(){
+  const m=MODELS.find(x=>x.id===state.model), r=ROOFS.find(x=>x.id===state.roof),
+        w=WALLS.find(x=>x.id===state.wall), i=INTERIORS.find(x=>x.id===state.interior);
+  const b=bandFor();
+  return `<div class="body" style="grid-template-columns:1fr 1fr">
+    <div class="left">
+      <div class="q">Here is your specification. Your guide price band covers the module fully installed: delivery, crane, base preparation and commissioning by our UK team.</div>
+      <div class="sumrow"><span class="k">Model</span><span class="v">${m.name} · ${m.size}</span></div>
+      <div class="sumrow"><span class="k">Roof</span><span class="v">${r.name}</span></div>
+      <div class="sumrow"><span class="k">Exterior</span><span class="v">${w.name}</span></div>
+      <div class="sumrow"><span class="k">Interior</span><span class="v">${i.name} · Japandi, fully furnished</span></div>
+      <div class="sumrow"><span class="k">Warranty</span><span class="v">25 year structural</span></div>
+      <div class="band">
+        <div class="lbl">Guide price, turnkey installed</div>
+        <div class="price">${gbp(b.low)} to ${gbp(b.high)}</div>
+        <div class="note">Excludes VAT. Your fixed quotation is confirmed after a site survey covering access, ground conditions and delivery distance.</div>
+      </div>
+      <div class="surveynote"><span>ⓘ</span><span><b>Why a band and not a fixed price?</b> Every plot is different. The survey removes the guesswork, and your reservation fee locks this band while we complete it.</span></div>
+    </div>
+    ${preview(m.img, 'Configured module hero render: '+m.name+' with '+r.name.toLowerCase()+', '+w.name.toLowerCase()+' exterior')}
+  </div>` + controls('Reserve your build slot', true);
+}
+
+function reserveStep(){
+  const m=MODELS.find(x=>x.id===state.model);
+  const b=bandFor();
+  return `<div class="body" style="display:block">
+    <div style="padding:28px 30px">
+    <div class="resgrid">
+      <div>
+        <div class="q">Production slots are released quarterly and allocated in reservation order. A fixed, fully refundable fee of ${gbp(RESERVATION_FEE)} secures yours.</div>
+        <ul class="steps-included">
+          <li><span class="n">1</span><span><b>Your build slot is locked.</b> ${m.name} specification and the ${gbp(b.low)} to ${gbp(b.high)} guide band are held for you.</span></li>
+          <li><span class="n">2</span><span><b>Site survey within 14 days.</b> We visit your plot, confirm access and base requirements, and issue your fixed quotation.</span></li>
+          <li><span class="n">3</span><span><b>You decide.</b> Accept the quotation and the ${gbp(RESERVATION_FEE)} is credited in full against your balance. Or walk away and it is refunded in full.</span></li>
+        </ul>
+        <p class="legal">The reservation fee is fully refundable until you accept your fixed quotation. You also have a statutory 14 day cancellation right under the Consumer Contracts Regulations 2013. Nothing is owed beyond the fee until you sign your build agreement.</p>
+      </div>
+      <div class="paybox">
+        <h3>Reserve now</h3>
+        <div class="fee">${gbp(RESERVATION_FEE)} <small>fully refundable</small></div>
+        <div class="field"><label>Full name</label><input placeholder="Your name"></div>
+        <div class="field"><label>Email</label><input placeholder="you@email.com"></div>
+        <div class="field"><label>Card number</label><input placeholder="1234 5678 9012 3456"></div>
+        <div class="cardrow">
+          <div class="field" style="flex:1"><label>Expiry</label><input placeholder="MM/YY"></div>
+          <div class="field" style="flex:1"><label>CVC</label><input placeholder="123"></div>
+        </div>
+        <button class="btn gold" style="width:100%;margin-top:16px" onclick="go(7)">Pay ${gbp(RESERVATION_FEE)} and reserve</button>
+        <div class="demo">Demo only. No payment is taken.</div>
+      </div>
+    </div>
+    </div>
+  </div>` + `<div class="controls"><button class="btn ghost" onclick="go(5)">Back to summary</button><span></span></div>`;
+}
+
+function successStep(){
+  const m=MODELS.find(x=>x.id===state.model);
+  return `<div class="success">
+    <div class="tick">✓</div>
+    <h2>Your ${m.name} build slot is reserved</h2>
+    <p>A confirmation email is on its way with your specification, guide price band and receipt. Our team will contact you within one working day to arrange your site survey. Your fee is fully refundable until you accept your fixed quotation.</p>
+    <button class="btn gold" style="margin-top:24px" onclick="location.reload()">Design another module</button>
+  </div>`;
+}
+
+function render(){
+  const stage=document.getElementById('stage');
+  if(state.step===1) stage.innerHTML=pickerStep(MODELS,'model','Choose your favourite shape. All three share the same reinforced concrete shell and arrive fully furnished.');
+  if(state.step===2) stage.innerHTML=pickerStep(ROOFS,'roof','Select the roofing material for your module.');
+  if(state.step===3) stage.innerHTML=pickerStep(WALLS,'wall','Select the exterior wall finish for your module.');
+  if(state.step===4) stage.innerHTML=pickerStep(INTERIORS,'interior','Select your preferred interior layout. Both are high quality Japandi interiors, delivered fully furnished.');
+  if(state.step===5) stage.innerHTML=summaryStep();
+  if(state.step===6) stage.innerHTML=reserveStep();
+  if(state.step===7){ stage.innerHTML=successStep(); document.getElementById('stepTitle').textContent='Reservation confirmed'; document.getElementById('pills').innerHTML=''; return; }
+  pills();
+}
+
+function go(n){
+  if(n<1||n>7) return;
+  state.step=n;
+  state.maxVisited=Math.max(state.maxVisited,Math.min(n,6));
+  render();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+render();
+</script>

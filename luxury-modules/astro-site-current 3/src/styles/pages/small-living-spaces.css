@@ -1,0 +1,60 @@
+.pg-small-living-spaces{font-family:'Source Sans 3',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;font-size:17px}
+.pg-small-living-spaces h1, .pg-small-living-spaces h2, .pg-small-living-spaces h3, .pg-small-living-spaces .serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600}
+.pg-small-living-spaces section{padding:72px 24px}
+.pg-small-living-spaces .wrap{max-width:1200px;margin:0 auto}
+.pg-small-living-spaces .kicker{color:var(--gold);letter-spacing:.22em;text-transform:uppercase;font-size:12px;font-weight:700;margin-bottom:12px}
+.pg-small-living-spaces h2{font-size:40px;color:var(--navy);margin-bottom:16px}
+.pg-small-living-spaces .lead{font-size:19.5px;color:#4b5563;max-width:720px}
+.pg-small-living-spaces .grid{display:grid;gap:24px}
+.pg-small-living-spaces .cols3{grid-template-columns:repeat(3,1fr)}
+.pg-small-living-spaces .cols2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.pg-small-living-spaces .cols3, .pg-small-living-spaces .cols2{grid-template-columns:1fr}}
+.pg-small-living-spaces .card{background:#fff;border:1px solid #e5e0d5;border-radius:3px;overflow:hidden;display:flex;flex-direction:column}
+.pg-small-living-spaces .card .imgph{height:210px}
+.pg-small-living-spaces .card .img{height:210px;overflow:hidden}
+.pg-small-living-spaces .card .img img{width:100%;height:100%;object-fit:cover}
+.pg-small-living-spaces .card .body{padding:22px;flex:1;display:flex;flex-direction:column}
+.pg-small-living-spaces .card h3{font-size:24px;color:var(--navy)}
+.pg-small-living-spaces .card .size{color:var(--gold);font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin:2px 0 10px}
+.pg-small-living-spaces .card p{font-size:15.5px;color:#4b5563;flex:1}
+.pg-small-living-spaces .price{margin-top:14px;font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--navy);font-weight:700}
+.pg-small-living-spaces .price small{font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--muted);font-weight:400}
+.pg-small-living-spaces .imgph{position:relative;background:linear-gradient(135deg,#33415e 0%,#4a5d43 100%);color:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.pg-small-living-spaces .imgph .ico{font-size:40px;opacity:.35}
+.pg-small-living-spaces .btn{display:inline-block;background:var(--gold);color:var(--navy);text-decoration:none;padding:14px 28px;border-radius:2px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:13.5px;border:none;cursor:pointer}
+.pg-small-living-spaces .btn:hover{background:var(--gold2)}
+.pg-small-living-spaces .btn.ghost{background:transparent;border:1px solid var(--gold);color:var(--gold2)}
+.pg-small-living-spaces .btn.ghost:hover{background:rgba(201,162,75,.12)}
+.pg-small-living-spaces .btn.dark{background:var(--navy);color:#fff}
+.pg-small-living-spaces .navy-band{background:var(--navy);color:#fff}
+.pg-small-living-spaces .navy-band h2{color:#fff}
+.pg-small-living-spaces .gold-rule{width:64px;height:3px;background:var(--gold);margin:18px 0 26px}
+.pg-small-living-spaces .uses{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+@media(max-width:900px){.pg-small-living-spaces .card .img{height:auto;aspect-ratio:3/2}
+.pg-small-living-spaces .card .img.sq{aspect-ratio:1/1}}
+.pg-small-living-spaces .hero{position:relative;height:82vh;min-height:560px;display:flex;align-items:center;color:#fff}
+.pg-small-living-spaces .hero .bgimg{position:absolute;inset:0;overflow:hidden}
+.pg-small-living-spaces .hero .bgimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-small-living-spaces .hero .inner{position:relative;max-width:1200px;margin:0 auto;padding:0 24px;width:100%}
+.pg-small-living-spaces .hero h1{font-size:clamp(40px,5.4vw,68px);line-height:1.08;max-width:900px;font-weight:700;text-shadow:0 2px 20px rgba(0,0,0,.45)}
+.pg-small-living-spaces .hero p{font-size:19px;max-width:560px;margin:20px 0 32px;text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.pg-small-living-spaces .figcap{font-size:12.5px;color:var(--muted);margin-top:8px}
+.pg-small-living-spaces .included{background:#fff;border:1px solid #e5e0d5;border-radius:3px;padding:36px;margin-top:8px}
+.pg-small-living-spaces .included ul{columns:2;gap:40px;list-style:none;font-size:14.5px;color:#4b5563}
+@media(max-width:760px){.pg-small-living-spaces .included ul{columns:1}}
+.pg-small-living-spaces .included li{padding:5px 0 5px 24px;position:relative;break-inside:avoid}
+.pg-small-living-spaces .included li:before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+.pg-small-living-spaces .split{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+@media(max-width:900px){.pg-small-living-spaces .split{grid-template-columns:1fr}}
+.pg-small-living-spaces .split img{width:100%;height:420px;object-fit:cover;border-radius:3px;display:block}
+.pg-small-living-spaces .faq details{background:#fff;border:1px solid #e5e0d5;border-radius:3px;margin-bottom:12px;padding:0 22px}
+.pg-small-living-spaces .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0}
+.pg-small-living-spaces .faq summary::-webkit-details-marker{display:none}
+.pg-small-living-spaces .faq summary h3{font-size:24px;color:var(--navy);font-weight:600}
+.pg-small-living-spaces .faq summary:after{content:"+";font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--gold);line-height:1;flex:0 0 auto}
+.pg-small-living-spaces .faq details[open] summary:after{content:"–"}
+.pg-small-living-spaces .faq details p{padding:0 0 20px;font-size:15.5px;color:#4b5563;max-width:860px}
+.pg-small-living-spaces .qbanner{background:linear-gradient(rgba(22,34,59,.88),rgba(22,34,59,.88));color:#fff;text-align:center}
+.pg-small-living-spaces .qbanner h2{color:#fff;font-size:44px}
+.pg-small-living-spaces .truststrip{display:flex;justify-content:center;gap:14px 34px;flex-wrap:wrap;margin-top:34px;padding-top:26px;border-top:1px solid rgba(224,188,106,.3);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#c7cede}
+.pg-small-living-spaces .truststrip b{color:var(--gold2)}

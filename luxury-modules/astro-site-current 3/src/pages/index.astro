@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/pages/index.css';
+import body from '../partials/index.html?raw';
+const schema = null;
+---
+<Layout title="Luxury Modules | Official UK Partner of Revonia | Turnkey Vaulted Homes, Cellars &amp; Saunas" description="Turnkey luxury garden rooms, hobbit houses, saunas and cellars, built underground by Revonia. 1,500+ projects, 25-year warranty, planning handled." schema={schema}>
+  <div class="pg-index"><Fragment set:html={body} /></div>
+</Layout>

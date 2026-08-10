@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/components.css';
+const schema = {"@context": "https://schema.org", "@type": "Service", "name": "Commercial modular underground buildings", "provider": {"@type": "Organization", "name": "Luxury Modules", "url": "https://luxurymodules.co.uk", "description": "Official UK partner of Revonia. Turnkey vaulted living spaces, cellars and saunas."}, "areaServed": "GB"};
+---
+<Layout title="Commercial Buyers: Spaces That Earn | Luxury Modules" description="Revenue-ready spaces for golf clubs, holiday parks, estates and hotels: installed in days, earning from week one. See the ROI model and from-pricing." schema={schema}>
+<div class="pagehero">
+  <p class="kicker">For Operators</p>
+  <h1>Spaces that earn: for commercial operators</h1>
+  <p>Revenue-ready spaces for golf clubs, holiday parks, estates and hotels: installed in days, earning from week one, and still earning when today's cabins are landfill.</p>
+  
+  <div style="margin-top:28px"><a class="btn" href="/book-a-call/">Book a Scoping Call</a> <a class="btn ghost" href="#brochure" style="margin-left:8px">Download Brochure</a></div>
+</div>
+<div class="strip">Official UK Partner of <b>Revonia</b> &nbsp;&middot;&nbsp; <b>1,500+</b> projects across Europe &nbsp;&middot;&nbsp; <b>25-year</b> structural warranty &nbsp;&middot;&nbsp; Planning <b>handled for you</b></div>
+<div class="imgph hero"><img class="real" src="/images/garden-room-exterior.jpg" alt="Aerial view of an earth-sheltered unit with decked terrace and hot tub"><span class="lbl">STAND-IN: garden-room-exterior.jpg — aerial estate feel; replace with true multi-unit shot</span></div>
+<section><div class="wrap">
+  <p class="kicker">The Case</p><h2>The revenue case</h2><div class="gold-rule"></div>
+  <p class="lead" style="margin-bottom:30px">The commercial logic in one line: guests pay a premium for a stay they cannot get elsewhere, and an earth-sheltered unit is the most photographed, most shared, most rebooked stay on any site it lands on.</p>
+  <div class="tablewrap"><table class="spec">
+    <tr><th>Worked example — one Small Living unit</th><th>Illustrative figures</th></tr>
+    <tr><td>Turnkey unit cost</td><td>from &pound;45,000</td></tr>
+    <tr><td>Nightly rate (premium unique stay)</td><td>&pound;225</td></tr>
+    <tr><td>Occupancy</td><td>70%</td></tr>
+    <tr><td>Gross revenue / year</td><td>~&pound;57,000</td></tr>
+    <tr><td>Running costs</td><td>Near net-zero heating; minimal maintenance (concrete, not timber)</td></tr>
+    <tr><td>Indicative payback</td><td>3–5 years, then decades of earning life</td></tr>
+  </table></div>
+  <p style="margin-top:18px;font-size:13px;color:var(--muted)">Illustrative model. Bring your rate card and occupancy history to the scoping call and we run it on your numbers. <!-- BUILD NOTE: ROI one-pager PDF is the B2B lead magnet — asset not yet produced. Interactive ROI calculator is the Phase 2 engagement hook. --></p>
+</div></section>
+
+<section class="navy-band"><div class="wrap">
+  <p class="kicker">Sectors</p><h2>Who this works for</h2><div class="gold-rule"></div>
+  <div class="grid cols3">
+    <div class="card"><div class="body"><h3>Golf clubs</h3><p>Stay-and-play accommodation that turns a day visit into a weekend booking.</p></div></div>
+    <div class="card"><div class="body"><h3>Holiday &amp; glamping parks</h3><p>The headline unit that lifts the whole site's rate card. <a href="/spaces/glamping-pods/" style="color:var(--navy);font-weight:600">Glamping pods &rarr;</a></p></div></div>
+    <div class="card"><div class="body"><h3>Estates &amp; venues</h3><p>Guest accommodation that sits invisibly in protected landscapes — often the planning answer, not the planning problem.</p></div></div>
+    <div class="card"><div class="body"><h3>Hotels</h3><p>Garden-suite inventory added without extending the building.</p></div></div>
+    <div class="card"><div class="body"><h3>Developers</h3><p>Differentiated units for schemes that need a story to sell.</p></div></div>
+    <div class="card"><div class="body"><h3>Wellness operators</h3><p>Cave saunas and spa suites as bookable revenue. <a href="/products/cave-saunas/" style="color:var(--navy);font-weight:600">Cave saunas &rarr;</a></p></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">Why Us</p><h2>Why operators choose modular underground</h2><div class="gold-rule"></div>
+  <div class="grid cols4">
+    <div class="card"><div class="body"><h3>Speed</h3><p>Units install in days, phased around your season. No year-long build site.</p></div></div>
+    <div class="card"><div class="body"><h3>Durability</h3><p>100-year design life, 25-year structural warranty. One purchase, decades of inventory.</p></div></div>
+    <div class="card"><div class="body"><h3>Running costs</h3><p>Earth-sheltered heating economics your P&amp;L will notice in month one.</p></div></div>
+    <div class="card"><div class="body"><h3>Guest premium</h3><p>A stay guests photograph is a stay guests pay more for — and rebook.</p></div></div>
+  </div>
+</div></section>
+
+<section style="background:#efe9db"><div class="wrap">
+  <p class="kicker">Process</p><h2>From site visit to first booking</h2><div class="gold-rule"></div>
+  <p class="lead" style="margin-bottom:26px">Scoping call, site visit, design and consent (we run planning), phased install, handover — the same four-step process as every build, at commercial scale. Walk it through on <a href="/how-it-works/" style="color:var(--navy);font-weight:600">how it works</a>.</p>
+</div></section>
+
+<section class="ctaband" id="cta">
+  <h2>One meeting. Your numbers.</h2>
+  <p>Book a scoping call with your rate card and site plan. Thirty minutes tells you whether the model works on your site.</p>
+  <div class="btns"><a class="btn" href="/book-a-call/">Book a Scoping Call</a></div>
+  <p style="font-size:13px;margin-top:18px;color:#8b95ab">No consumer brochure here by design — ask us for the ROI one-pager instead.</p>
+  <!-- BUILD NOTE: scoping form on this page carries B2B qualifier fields (sector, units, site status) + hidden audience_type=B2B. -->
+</section>
+</Layout>

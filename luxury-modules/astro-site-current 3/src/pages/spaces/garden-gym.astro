@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/components.css';
+const schema = {"@context": "https://schema.org", "@type": "Product", "name": "Garden Gyms", "description": "Insulated garden gym pods", "brand": {"@type": "Brand", "name": "Revonia"}, "offers": {"@type": "AggregateOffer", "priceCurrency": "GBP", "lowPrice": "45000", "offerCount": 1}, "manufacturer": {"@type": "Organization", "name": "Luxury Modules", "url": "https://luxurymodules.co.uk", "description": "Official UK partner of Revonia. Turnkey vaulted living spaces, cellars and saunas."}};
+---
+<Layout title="Garden Gyms: Insulated Home Gym Pods | Luxury Modules" description="A garden gym that holds temperature year-round: earth-sheltered, ventilated and silent for neighbours. Sizes, options and from-pricing inside." schema={schema}>
+<div class="pagehero">
+  <p class="kicker">Use Case · Training</p>
+  <h1>Garden gyms built for training, not sweating walls</h1>
+  <p>A garden gym that holds temperature year-round: earth-sheltered, properly ventilated, silent for the neighbours, and with a concrete floor that laughs at your rack and plates.</p>
+  <div class="price-anchor">From £45,000</div>
+  <div style="margin-top:28px"><a class="btn" href="/book-a-call/">Book a Scoping Call</a> <a class="btn ghost" href="#brochure" style="margin-left:8px">Download Brochure</a></div>
+</div>
+<div class="strip">Official UK Partner of <b>Revonia</b> &nbsp;&middot;&nbsp; <b>1,500+</b> projects across Europe &nbsp;&middot;&nbsp; <b>25-year</b> structural warranty &nbsp;&middot;&nbsp; Planning <b>handled for you</b></div>
+<div class="imgph hero"><img class="real" src="/images/modular-60-interior.jpg" alt="Open vaulted interior with space for a full home gym fit-out"><span class="lbl">STAND-IN: modular-60-interior.jpg — replace with kitted gym interior</span></div>
+<section><div class="wrap">
+  <p class="kicker">The Case</p><h2>Why underground beats a shed gym</h2><div class="gold-rule"></div>
+  <div class="grid cols4">
+    <div class="card"><div class="body"><h3>Temperature</h3><p>Sheds hit 35&deg;C in July and 5&deg;C in January. Earth-sheltering holds a training temperature all year.</p></div></div>
+    <div class="card"><div class="body"><h3>Air</h3><p>Designed ventilation with heat recovery — fresh air at squat number eight, not condensation on the walls.</p></div></div>
+    <div class="card"><div class="body"><h3>Noise</h3><p>Dropped deadlifts and 6am playlists stay inside a metre of earth. Neighbours notice nothing.</p></div></div>
+    <div class="card"><div class="body"><h3>Floor loading</h3><p>A structural concrete floor takes racks, rigs and bumper plates without a second thought.</p></div></div>
+  </div>
+</div></section>
+
+<section class="navy-band"><div class="wrap">
+  <p class="kicker">Hybrid</p><h2>Office by day, gym by evening</h2><div class="gold-rule"></div>
+  <p class="lead" style="margin-bottom:26px">The 20m&sup2; layouts split into two zones — desk one side, rack the other, one heating system, one build. See the <a href="/spaces/garden-office/" style="color:var(--gold2);font-weight:600">garden office</a> page for the working half.</p>
+  <div class="imgph half"><img class="real" src="/images/garden-office-working-interior.webp" alt="Desk zone of a hybrid office and gym pod"><span class="lbl">STAND-IN: garden-office-working-interior.webp — replace with hybrid layout render</span></div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">Numbers</p><h2>Garden gym sizes and from-prices</h2><div class="gold-rule"></div>
+  <p class="lead" style="margin-bottom:26px">Gyms are built from the <a href="/products/small-living-spaces/" style="color:var(--navy);font-weight:600">Small Living range (10–29m&sup2;)</a>, from &pound;45,000 turnkey. Full range pricing on the <a href="/pricing/" style="color:var(--navy);font-weight:600">pricing page</a>.</p>
+</div></section>
+
+<section style="background:#efe9db"><div class="wrap">
+  <p class="kicker">Fit-Out</p><h2>Kit it out</h2><div class="gold-rule"></div>
+  <p class="lead" style="margin-bottom:26px">Rubber flooring, mirrors, power for cardio kit, sound system pre-wire and bespoke storage are all fitted at build. Extras and add-ons get a full page shortly; for now, list what you train with at the scoping call.</p>
+</div></section>
+<section style="background:#efe9db"><div class="wrap">
+  <p class="kicker">FAQ</p><h2>Your questions, answered</h2><div class="gold-rule"></div>
+  <div class="faq-item"><h3>Is there enough headroom to lift overhead?</h3><p>Yes. The vaulted ceiling gives full standing headroom at the centre line — press, snatch and pull-up heights are checked against your layout at design stage.</p></div><div class="faq-item"><h3>Do I need planning permission for a garden gym?</h3><p>Often not — most fall within permitted development. Where consent is needed we handle it. See the planning guide.</p></div><div class="faq-item"><h3>Will it get damp with heavy training use?</h3><p>No. Geomembrane waterproofing plus designed ventilation with heat recovery keeps humidity controlled even under hard daily use.</p></div>
+  <p style="margin-top:18px;font-size:14.5px">More questions? <a href="/faq/" style="color:var(--navy);font-weight:600">See the full FAQ</a>.</p>
+</div></section><section class="ctaband" id="cta">
+  <h2>Train ten steps from the back door</h2>
+  <p>Book a scoping call to plan your garden gym — or grab the brochure and see the layouts first.</p>
+  <div class="btns"><a class="btn" href="/book-a-call/">Book a Scoping Call</a><a class="btn ghost" href="#brochure">Download the Brochure</a></div>
+  
+  <!-- BUILD NOTE: brochure CTA = HubSpot email-only form (hidden fields: product_interest, product_range, audience_type, source_page_url). Scoping CTA -> contact.html until /book-a-call/ with calendar embed exists. -->
+</section>
+</Layout>

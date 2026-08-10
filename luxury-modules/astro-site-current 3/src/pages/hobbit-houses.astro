@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/pages/hobbit-houses.css';
+import body from '../partials/hobbit-houses.html?raw';
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Hobbit Houses (Earth-Sheltered Buildings)",
+  "brand": {"@type": "Brand", "name": "Luxury Modules"},
+  "description": "Turnkey earth-sheltered hobbit-style houses, cellars, saunas and garden rooms: design, planning, groundworks, installation and fit-out by one UK team. 25-year structural warranty.",
+  "offers": {"@type": "AggregateOffer", "priceCurrency": "GBP", "lowPrice": "25000", "highPrice": "199000", "offerCount": "5"}
+};
+---
+<Layout title="Hobbit Houses UK: Real, Liveable, Turnkey | Luxury Modules" description="Yes, hobbit houses are real, and you can have one in your garden. Earth-sheltered, fully insulated and delivered turnkey, with planning handled." schema={schema}>
+  <div class="pg-hobbit-houses"><Fragment set:html={body} /></div>
+</Layout>

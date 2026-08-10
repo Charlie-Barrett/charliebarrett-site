@@ -1,0 +1,58 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/components.css';
+const schema = {"@context": "https://schema.org", "@type": "Product", "name": "Luxury Glamping Pods", "description": "Earth-sheltered glamping pods for operators", "brand": {"@type": "Brand", "name": "Revonia"}, "offers": {"@type": "AggregateOffer", "priceCurrency": "GBP", "lowPrice": "45000", "offerCount": 1}, "manufacturer": {"@type": "Organization", "name": "Luxury Modules", "url": "https://luxurymodules.co.uk", "description": "Official UK partner of Revonia. Turnkey vaulted living spaces, cellars and saunas."}};
+---
+<Layout title="Luxury Glamping Pods for Sale UK | Luxury Modules" description="Glamping pods guests pay a premium for: earth-sheltered, low-maintenance and running at near net-zero. ROI model, from-pricing and B2B options." schema={schema}>
+<div class="pagehero">
+  <p class="kicker">Use Case · Commercial</p>
+  <h1>Glamping pods that earn their keep</h1>
+  <p>Glamping pods guests pay a premium for: earth-sheltered hobbit-style stays that photograph like nothing else on the booking sites, run at near net-zero, and keep earning for decades.</p>
+  <div class="price-anchor">From £45,000 per unit</div>
+  <div style="margin-top:28px"><a class="btn" href="/book-a-call/">Book a Scoping Call</a> <a class="btn ghost" href="#brochure" style="margin-left:8px">Download Brochure</a></div>
+</div>
+<div class="strip">Official UK Partner of <b>Revonia</b> &nbsp;&middot;&nbsp; <b>1,500+</b> projects across Europe &nbsp;&middot;&nbsp; <b>25-year</b> structural warranty &nbsp;&middot;&nbsp; Planning <b>handled for you</b></div>
+<div class="imgph hero"><img class="real" src="/images/the-nest-wildlands-.jpg" alt="Luxury glamping pod set into hillside at a holiday park"><span class="lbl">ASSET IN FOLDER → ../The Nest, Wildlands .jpg (temp hero — multi-unit park shot still needed)</span></div>
+<section><div class="wrap">
+  <p class="kicker">The Product</p><h2>The glamping pods guests remember</h2><div class="gold-rule"></div>
+  <p class="lead">Every park has timber pods. Nobody else has a hobbit house. An earth-sheltered stay is the listing guests screenshot and send to each other — which is what lets operators charge a nightly rate 2–3&times; a standard pod, with occupancy to match. The photography does the marketing for you.</p>
+</div></section>
+
+<section class="navy-band"><div class="wrap">
+  <p class="kicker">The Numbers</p><h2>The numbers</h2><div class="gold-rule"></div>
+  <div class="tablewrap"><table class="spec">
+    <tr><th>Worked example (illustrative)</th><th>Standard timber pod</th><th>Earth-sheltered unit</th></tr>
+    <tr><td>Unit cost (turnkey)</td><td>~&pound;35,000</td><td>from &pound;45,000</td></tr>
+    <tr><td>Nightly rate</td><td>&pound;95</td><td>&pound;225+</td></tr>
+    <tr><td>Occupancy</td><td>55%</td><td>70%+ (novelty draws bookings)</td></tr>
+    <tr><td>Gross revenue / year</td><td>~&pound;19,000</td><td>~&pound;57,000</td></tr>
+    <tr><td>Design life</td><td>15–20 years</td><td>100 years, 25-year warranty</td></tr>
+  </table></div>
+  <p style="margin-top:18px;font-size:13px;color:#8b95ab">Illustrative model — bring your rate card and occupancy and we will run it on your numbers. Full ROI case on the <a href="/commercial/" style="color:var(--gold2)">commercial page</a>.</p>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">Operations</p><h2>Built for operators</h2><div class="gold-rule"></div>
+  <div class="grid cols3">
+    <div class="card"><div class="body"><h3>Near-zero running costs</h3><p>Earth-sheltering slashes heating — the biggest line in most pods' operating cost.</p></div></div>
+    <div class="card"><div class="body"><h3>Minimal maintenance</h3><p>Concrete does not rot, warp or need annual retreatment. Turn it over, book it again.</p></div></div>
+    <div class="card"><div class="body"><h3>Multi-unit installs</h3><p>Phased craning across a site; units from the Small to Large Living ranges mixed to your rate card.</p></div></div>
+  </div>
+</div></section>
+
+<section style="background:#efe9db"><div class="wrap">
+  <p class="kicker">The Rules</p><h2>Planning for commercial sites</h2><div class="gold-rule"></div>
+  <p class="lead" style="margin-bottom:26px">Commercial siting is a different planning conversation from a back garden — and we run it for you, application to consent. Background in the <a href="/planning-permission/" style="color:var(--navy);font-weight:600">planning guide</a>.</p>
+</div></section>
+<section style="background:#efe9db"><div class="wrap">
+  <p class="kicker">FAQ</p><h2>Your questions, answered</h2><div class="gold-rule"></div>
+  <div class="faq-item"><h3>What is the realistic payback period?</h3><p>On premium nightly rates most operators model payback in 3–5 years per unit — then decades of earning life after. We will run the model on your actual rates at the scoping call.</p></div><div class="faq-item"><h3>Can you deliver multiple units in phases?</h3><p>Yes — multi-unit installs are phased around your season so the site keeps trading while it grows.</p></div><div class="faq-item"><h3>Do you work with sites that have no services?</h3><p>Off-grid packages (solar, battery, water and waste options) are available; site feasibility is confirmed at the site visit.</p></div>
+  <p style="margin-top:18px;font-size:14.5px">More questions? <a href="/faq/" style="color:var(--navy);font-weight:600">See the full FAQ</a>.</p>
+</div></section><section class="ctaband" id="cta">
+  <h2>Run the numbers on your site</h2>
+  <p>Book a scoping call with your rate card and site plan — the meeting is the ROI conversation.</p>
+  <div class="btns"><a class="btn" href="/book-a-call/">Book a Scoping Call</a><a class="btn ghost" href="#brochure">Download the Brochure</a></div>
+  <p style="font-size:13px;margin-top:18px;color:#8b95ab">Commercial enquiries go straight to a scoping call — the consumer brochure won't answer operator questions. B2B qualifier fields: sector, number of units, site status.</p>
+  <!-- BUILD NOTE: brochure CTA = HubSpot email-only form (hidden fields: product_interest, product_range, audience_type, source_page_url). Scoping CTA -> contact.html until /book-a-call/ with calendar embed exists. -->
+</section>
+</Layout>

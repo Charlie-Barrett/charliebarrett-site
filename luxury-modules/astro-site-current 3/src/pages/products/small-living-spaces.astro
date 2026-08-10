@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/pages/small-living-spaces.css';
+import body from '../../partials/small-living-spaces.html?raw';
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Small Living Spaces & Garden Pods (10-29m²)",
+  "brand": {"@type": "Brand", "name": "Luxury Modules"},
+  "description": "Insulated, earth-sheltered garden pods and small living spaces from 10-29m², delivered turnkey: design, planning, groundworks, installation and fit-out by one UK team.",
+  "offers": {"@type": "AggregateOffer", "priceCurrency": "GBP", "lowPrice": "45000", "highPrice": "150000", "offerCount": "6"}
+};
+---
+<Layout title="Garden Pods &amp; Small Living Spaces 10-29m\u00b2 | Luxury Modules" description="Insulated underground garden pods from 10-29m\u00b2. Home office, gym or guest suite with heating and full insulation as standard. From-pricing and floorplans." schema={schema}>
+  <div class="pg-small-living-spaces"><Fragment set:html={body} /></div>
+</Layout>

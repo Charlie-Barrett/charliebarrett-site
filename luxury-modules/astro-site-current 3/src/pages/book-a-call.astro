@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/pages/contact.css';
+import body from '../partials/contact.html?raw';
+const schema = null;
+---
+<Layout title="Contact | Luxury Modules | Book a Scoping Call" description="" schema={schema}>
+  <div class="pg-contact"><Fragment set:html={body} /></div>
+</Layout>

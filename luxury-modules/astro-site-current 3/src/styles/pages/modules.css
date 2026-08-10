@@ -1,0 +1,46 @@
+.pg-modules{font-family:'Source Sans 3',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;font-size:17px}
+.pg-modules h1, .pg-modules h2, .pg-modules h3, .pg-modules .serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600}
+.pg-modules .imgph{position:relative;background:linear-gradient(135deg,#33415e 0%,#4a5d43 100%);color:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.pg-modules .imgph .lbl{position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.55);font-size:11px;padding:5px 10px;border-left:3px solid var(--gold);max-width:85%;font-family:monospace}
+.pg-modules .imgph .ico{font-size:40px;opacity:.35}
+.pg-modules section{padding:72px 24px}
+.pg-modules .wrap{max-width:1200px;margin:0 auto}
+.pg-modules .kicker{color:var(--gold);letter-spacing:.22em;text-transform:uppercase;font-size:12px;font-weight:700;margin-bottom:12px}
+.pg-modules h2{font-size:40px;color:var(--navy);margin-bottom:16px}
+.pg-modules .lead{font-size:19.5px;color:#4b5563;max-width:720px}
+.pg-modules .grid{display:grid;gap:24px}
+.pg-modules .cols3{grid-template-columns:repeat(3,1fr)}
+.pg-modules .cols2{grid-template-columns:repeat(2,1fr)}
+.pg-modules .cols4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.pg-modules .cols3, .pg-modules .cols4, .pg-modules .cols2{grid-template-columns:1fr}}
+.pg-modules .card{background:#fff;border:1px solid #e5e0d5;border-radius:3px;overflow:hidden;display:flex;flex-direction:column}
+.pg-modules .card .imgph{height:210px}
+.pg-modules .card .body{padding:22px;flex:1;display:flex;flex-direction:column}
+.pg-modules .card h3{font-size:24px;color:var(--navy)}
+.pg-modules .card .size{color:var(--gold);font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin:2px 0 10px}
+.pg-modules .card p{font-size:15.5px;color:#4b5563;flex:1}
+.pg-modules .price{margin-top:14px;font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--navy);font-weight:700}
+.pg-modules .price small{font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--muted);font-weight:400}
+.pg-modules .btn{display:inline-block;background:var(--gold);color:var(--navy);text-decoration:none;padding:14px 28px;border-radius:2px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:13.5px;border:none;cursor:pointer}
+.pg-modules .btn:hover{background:var(--gold2)}
+.pg-modules .btn.ghost{background:transparent;border:1px solid var(--gold);color:var(--gold2)}
+.pg-modules .btn.ghost:hover{background:rgba(201,162,75,.12)}
+.pg-modules .btn.dark{background:var(--navy);color:#fff}
+.pg-modules .navy-band{background:var(--navy);color:#fff}
+.pg-modules .navy-band h2{color:#fff}
+.pg-modules .gold-rule{width:64px;height:3px;background:var(--gold);margin:18px 0 26px}
+.pg-modules .uses{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+.pg-modules .diff{font-size:14px;font-weight:600;color:var(--gold);margin-top:6px}
+.pg-modules .pagehero{background:var(--navy);color:#fff;padding:80px 24px 64px;text-align:center}
+.pg-modules .pagehero h1{font-size:clamp(36px,5vw,56px)}
+.pg-modules .pagehero p{color:#c7cede;max-width:640px;margin:16px auto 0}
+.pg-modules .rangehead{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.pg-modules .rangehead .sz{color:var(--gold);font-size:14px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+.pg-modules .included{background:#fff;border:1px solid #e5e0d5;border-radius:3px;padding:36px;margin-top:8px}
+.pg-modules .included ul{columns:2;gap:40px;list-style:none;font-size:14.5px;color:#4b5563}
+@media(max-width:760px){.pg-modules .included ul{columns:1}}
+.pg-modules .included li{padding:5px 0 5px 24px;position:relative;break-inside:avoid}
+.pg-modules .included li:before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+.pg-modules .extras{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.pg-modules .extras span{background:#fff;border:1px solid #e0d8c6;border-radius:20px;padding:8px 16px;font-size:13.5px;color:#4b5563}
+.pg-modules .vatnote{font-size:13px;color:var(--muted);margin-top:26px;font-style:italic}
