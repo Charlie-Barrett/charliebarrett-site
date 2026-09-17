@@ -114,7 +114,10 @@
     <div class="wrap">
       <div class="founder">
         <div class="facebox">
-          <img class="face" alt="Charlie Barrett" src="/assets/charlie-barrett.jpg">
+          <picture>
+            <source type="image/webp" srcset="/assets/charlie-barrett.webp 1x, /assets/charlie-barrett@2x.webp 2x">
+            <img class="face" alt="Charlie Barrett" src="/assets/charlie-barrett.jpg" srcset="/assets/charlie-barrett.jpg 1x, /assets/charlie-barrett@2x.jpg 2x" width="800" height="1000" loading="lazy" decoding="async">
+          </picture>
         </div>
         <div class="founder-copy">
           <span class="eyebrow">Who you work with</span>
