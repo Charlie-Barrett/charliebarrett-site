@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://charliebarrett.co.uk/sitemap.xml
+Sitemap: https://www.charliebarrett.co.uk/sitemap.xml
