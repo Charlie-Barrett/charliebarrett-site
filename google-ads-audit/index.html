@@ -44,6 +44,9 @@
   .tier .lp-list li{font-size:.96rem;padding:6px 0 6px 22px}
   .tier .lp-list li::before{top:15px}
   .tier .for{color:#40506b;font-size:.9rem;margin:18px 0 22px}
+  .tier .alt{display:block;text-align:center;margin-top:14px;font-size:.88rem;color:var(--muted)}
+  .tier .alt:hover{color:var(--ink)}
+  .tier .secure{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:center;margin-top:10px}
   .tier .btn{margin-top:auto;justify-content:center;white-space:normal;text-align:center}
   #options{scroll-margin-top:70px}
   .lp-fit{display:grid;grid-template-columns:1fr 1fr;gap:26px}
@@ -166,7 +169,7 @@
       <div class="sec-head">
         <span class="eyebrow"><span class="num">04</span> / The options</span>
         <h2>Three fixed fees. Pick the depth you need.</h2>
-        <p>Each option includes everything in the one before it. No retainer on any of them.</p>
+        <p>Each option includes everything in the one before it. Pay online now, or send a request first if you would like to check the fit.</p>
       </div>
       <div class="lp-tiers">
         <div class="tier">
@@ -181,7 +184,8 @@
             <li>30 minute call</li>
           </ul>
           <p class="for">Best for a second opinion on a single account spending under &pound;10,000 a month.</p>
-          <a class="btn btn-ghost" href="#request" data-tier="Health Check (&pound;750)">Choose Health Check</a>
+          <a class="btn btn-ghost pay" href="https://buy.stripe.com/6oU5kCa9x2b82tTgpf5kk01" data-pay="health_check" data-value="750">Pay now &middot; &pound;750</a>
+          <a class="alt" href="#request" data-tier="Health Check (&pound;750)">Or send a request first</a>
         </div>
         <div class="tier rec">
           <div class="flag">Recommended</div>
@@ -197,7 +201,8 @@
             <li>45 minute walkthrough, with your agency or team if you want them there</li>
           </ul>
           <p class="for">Best for most accounts.</p>
-          <a class="btn btn-primary" href="#request" data-tier="Full Audit (&pound;1,250)">Choose Full Audit <span class="arw">&rarr;</span></a>
+          <a class="btn btn-primary pay" href="https://buy.stripe.com/cNieVcepN030fgF0qh5kk00" data-pay="full_audit" data-value="1250">Pay now &middot; &pound;1,250 <span class="arw">&rarr;</span></a>
+          <a class="alt" href="#request" data-tier="Full Audit (&pound;1,250)">Or send a request first</a>
         </div>
         <div class="tier">
           <div class="k">Option 03</div>
@@ -211,10 +216,12 @@
             <li>I review the changes your agency or team makes</li>
           </ul>
           <p class="for">Best for teams who want the fixes checked, not just listed.</p>
-          <a class="btn btn-ghost" href="#request" data-tier="Audit Plus Support (&pound;1,950)">Choose Audit Plus Support</a>
+          <a class="btn btn-ghost pay" href="https://buy.stripe.com/4gMdR80yX4jg7Odc8Z5kk02" data-pay="audit_plus_support" data-value="1950">Pay now &middot; &pound;1,950</a>
+          <a class="alt" href="#request" data-tier="Audit Plus Support (&pound;1,950)">Or send a request first</a>
         </div>
       </div>
-      <p class="svc-note">The findings are yours. Hand them to your agency, give them to your in-house team, or ask me to help put them into practice. There is no obligation either way.</p>
+      <p class="svc-note" style="margin-bottom:10px">Payment is taken securely by Stripe, and an invoice is issued automatically. After you pay, I email you within one working day to arrange read-only access.</p>
+      <p class="svc-note" style="margin-top:0">The findings are yours. Hand them to your agency, give them to your in-house team, or ask me to help put them into practice. There is no obligation either way.</p>
     </div>
   </section>
 
@@ -227,15 +234,15 @@
       <div class="process">
         <div class="prow">
           <div class="pnum">01</div>
-          <div class="pname">Request</div>
+          <div class="pname">Start</div>
           <div class="pwave"><svg viewBox="0 0 120 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q7.5 2 15 10 T30 10 T45 10 T60 10 T75 10 T90 10 T105 10 T120 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-          <div class="pdesc">Tell me about the account using the form below. I reply within one working day to confirm the option and the timing.</div>
+          <div class="pdesc">Pay online for the option you want, or send a request first. Either way, I reply within one working day.</div>
         </div>
         <div class="prow">
           <div class="pnum">02</div>
           <div class="pname">Access</div>
           <div class="pwave"><svg viewBox="0 0 120 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q7.5 2 15 10 T30 10 T45 10 T60 10 T75 10 T90 10 T105 10 T120 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-          <div class="pdesc">You pay the fixed fee and grant read-only access to Google Ads and GA4. I cannot edit anything, and your agency carries on as normal.</div>
+          <div class="pdesc">You grant read-only access to Google Ads and GA4. I cannot edit anything, and your agency carries on as normal.</div>
         </div>
         <div class="prow">
           <div class="pnum">03</div>
@@ -310,7 +317,7 @@
       <div class="lp-faq">
         <details open>
           <summary>What does it cost?</summary>
-          <p>&pound;750 for the Health Check, &pound;1,250 for the Full Audit and &pound;1,950 for the Audit Plus Support. Each is a fixed fee, confirmed in writing and paid before work starts. There is nothing to pay when you send the request.</p>
+          <p>&pound;750 for the Health Check, &pound;1,250 for the Full Audit and &pound;1,950 for the Audit Plus Support. Each is a fixed fee, paid before work starts. You can pay online straight away, or send a request first and pay once I have confirmed the fit.</p>
         </details>
         <details>
           <summary>Will you change anything in my account?</summary>
@@ -430,6 +437,11 @@
     a.addEventListener('click',function(){
       var sel=document.getElementById('f-tier');
       if(sel){for(var i=0;i<sel.options.length;i++){if(sel.options[i].text===a.getAttribute('data-tier')){sel.selectedIndex=i;}}}
+    });
+  });
+  document.querySelectorAll('[data-pay]').forEach(function(a){
+    a.addEventListener('click',function(){
+      if(typeof gtag==='function'){gtag('event','begin_checkout',{currency:'GBP',value:Number(a.getAttribute('data-value')),items:[{item_id:a.getAttribute('data-pay')}]});}
     });
   });
 </script>
