@@ -279,3 +279,13 @@
   .legal h3{margin:38px 0 10px}
   .legal p, .legal li{color:#40506b;font-size:1rem}
   .legal ul{margin:12px 0 0 20px}
+
+  /* mobile navigation: show the page links as a second row under the mark */
+  @media(max-width:900px){
+    .nav-inner{flex-wrap:wrap;height:auto;padding-top:12px;padding-bottom:0;row-gap:10px}
+    .nav-cta{display:contents}
+    .nav-cta > .btn{margin-left:auto;padding:11px 16px;font-size:.7rem}
+    .nav-links{display:flex;order:3;width:100%;justify-content:space-between;gap:14px;padding:12px 0 14px;border-top:1px solid var(--line)}
+    .nav-links a{font-size:.72rem;padding:4px 0}
+    .nav-inner:not(:has(.nav-links)){padding-bottom:12px}
+  }
