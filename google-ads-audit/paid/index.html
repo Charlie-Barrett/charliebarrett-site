@@ -14,7 +14,11 @@
     if(prices[tier]){
       var key='cbc_paid_'+tier, seen=false;
       try{seen=sessionStorage.getItem(key);sessionStorage.setItem(key,'1');}catch(e){}
-      if(!seen){gtag('event','purchase',{currency:'GBP',value:prices[tier],transaction_id:tier+'_'+Date.now(),items:[{item_id:tier}]});}
+      if(!seen){
+        var tid=tier+'_'+Date.now();
+        gtag('event','purchase',{send_to:'G-B0JP2E4TKW',currency:'GBP',value:prices[tier],transaction_id:tid,items:[{item_id:tier}]});
+        gtag('event','conversion',{send_to:'AW-18504929357/Z8LpCLe5pZkdEM2g6_dE',value:prices[tier],currency:'GBP',transaction_id:tid});
+      }
     }
   })();
 </script>
