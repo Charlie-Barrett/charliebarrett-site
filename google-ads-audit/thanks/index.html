@@ -9,15 +9,26 @@
   gtag('config', 'G-B0JP2E4TKW');
   gtag('config', 'AW-18504929357');
   gtag('event', 'generate_lead', {lead_source: 'google_ads_audit'});
+  // Google Ads lead conversion. Paste the conversion label from Google Ads > Goals > Conversions
+  // (the part after "AW-18504929357/") into CBC_LEAD_LABEL. Until then only the GA4 event fires.
+  var CBC_LEAD_LABEL = '';
+  if (CBC_LEAD_LABEL) { gtag('event', 'conversion', {send_to: 'AW-18504929357/' + CBC_LEAD_LABEL}); }
 </script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Audit Request Received | Charlie Barrett Consulting</title>
-<meta name="description" content="Thanks for requesting a Google Ads audit. Charlie will reply within one working day.">
+<title>Snapshot Request Received | Charlie Barrett Consulting</title>
+<meta name="description" content="Thanks for your request. Charlie will reply within two working days.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://www.charliebarrett.co.uk/google-ads-audit/thanks/">
 <meta name="theme-color" content="#13233F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Charlie Barrett Consulting">
+<meta property="og:title" content="Snapshot Request Received | Charlie Barrett Consulting">
+<meta property="og:description" content="Thanks for your request. Charlie will reply within two working days.">
+<meta property="og:url" content="https://www.charliebarrett.co.uk/google-ads-audit/thanks/">
+<meta property="og:image" content="https://www.charliebarrett.co.uk/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -25,6 +36,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css">
+
 </head>
 <body>
 
@@ -37,11 +49,11 @@
 <main class="page">
   <section class="simple-hero">
     <div class="wrap">
-      <span class="eyebrow on-ink">Audit request received</span>
-      <h1 style="margin-top:24px;max-width:18ch">Thanks. I will reply within one working day.</h1>
-      <p class="lead" style="margin-top:24px;color:#c7cedb">My reply will set out the fixed fee, the timing and how to grant read-only access. Nothing is charged and nothing is committed until you say go.</p>
+      <span class="eyebrow on-ink">Snapshot request received</span>
+      <h1 style="margin-top:24px;max-width:18ch">Thanks. I will reply within two working days.</h1>
+      <p class="lead" style="margin-top:24px;color:#c7cedb">For a snapshot, you get the review and a link to book the 15-minute walkthrough. For a Health Check, my reply sets out the timing and how to grant read-only access. Nothing is charged until you say go.</p>
       <div class="cta-row" style="display:flex;gap:14px;margin-top:34px;flex-wrap:wrap">
-        <a class="btn btn-primary" href="https://calendly.com/charliebarrett-info/30min" target="_blank" rel="noopener">Prefer to talk first? Book a call <span class="arw">&rarr;</span></a>
+        <a class="btn btn-primary" href="https://calendly.com/charliebarrett-info/30min" target="_blank" rel="noopener">Book the walkthrough call now <span class="arw">&rarr;</span></a>
         <a class="btn btn-ghost on-ink" href="/">Visit the main site</a>
       </div>
     </div>
