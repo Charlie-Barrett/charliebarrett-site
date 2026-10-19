@@ -289,3 +289,10 @@
     .nav-links a{font-size:.72rem;padding:4px 0}
     .nav-inner:not(:has(.nav-links)){padding-bottom:12px}
   }
+
+  /* six-item nav: keep one row, scroll sideways on narrow screens */
+  @media(max-width:900px){
+    .nav-links{justify-content:flex-start;gap:22px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    .nav-links::-webkit-scrollbar{display:none}
+    .nav-links a{flex:0 0 auto}
+  }
