@@ -30,7 +30,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css">
+<script src="/assets/nav.js" defer></script>
+<script>
+  /* Visitors arriving from an ad get a focused header: logo and one button, no menu. */
+  (function(){try{var q=location.search;if(/[?&](gclid|gbraid|wbraid)=/.test(q)||/[?&]utm_medium=(cpc|ppc|paid|paidsearch)(&|$)/i.test(q)){sessionStorage.setItem('cbc_lp','1');}
+  if(sessionStorage.getItem('cbc_lp')==='1'){document.documentElement.className+=' lp-focus';}}catch(e){}})();
+</script>
 <style>
+  html.lp-focus .nav-links{display:none}
+  .form .step-1 .btn,.form .step-2 > .btn{margin-top:4px}
   /* offer page additions (page-scoped, shared stylesheet untouched) */
   #request,#options,#packages{scroll-margin-top:90px}
   .lp-tiers{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;align-items:stretch}
@@ -98,12 +106,18 @@
 <header class="nav">
   <div class="wrap nav-inner">
     <a class="nav-mark" href="/" aria-label="Charlie Barrett Consulting home" style="text-decoration:none"><span class="mark">cbc<span class="dot"></span></span></a>
-    <nav class="nav-cta">
+    <nav class="nav-cta" aria-label="Main">
       <div class="nav-links">
-        <a href="/services/">Services</a>
-        <a href="/seo-health-check/">SEO &amp; GEO</a>
-        <a class="active" href="/google-ads-audit/">Google Ads</a>
-        <a href="/growth-sprint/">Growth Sprint</a>
+        <details class="nav-drop">
+          <summary class="active">Services</summary>
+          <div class="nav-menu">
+            <a href="/free-snapshot/"><b>Free Snapshot</b><span>SEO or Google Ads review, no cost</span></a>
+            <a href="/seo-health-check/"><b>SEO &amp; GEO Health Check</b><span>Free snapshot, then &pound;750</span></a>
+            <a href="/google-ads-audit/"><b>Google Ads Audit</b><span>Free snapshot, then &pound;750</span></a>
+            <a href="/growth-sprint/"><b>Growth Sprint</b><span>90 days, from &pound;2,500 a month</span></a>
+            <a href="/services/#ongoing"><b>Ongoing support</b><span>Fractional leadership and advisory</span></a>
+          </div>
+        </details>
         <a href="/about/">About</a>
         <a href="/contact/">Contact</a>
       </div>
@@ -120,7 +134,7 @@
         <div>
           <span class="eyebrow on-ink"><span class="num">01</span> / Independent Google Ads audit</span>
           <h1 style="margin-top:30px;max-width:19ch">Find the wasted spend before you renew.</h1>
-          <p class="lead" style="margin-top:28px">A director-level review of your Google Ads from someone who has run seven-figure budgets. A straight answer on what is working, what is wasted, and what to fix first. Start with a free snapshot.</p>
+          <p class="lead" style="margin-top:28px">For industrial, technical and B2B businesses: a director-level review of your Google Ads from someone who has run seven-figure budgets. A straight answer on what is working, what is wasted, and what to fix first. Start with a free snapshot.</p>
           <div class="cta-row">
             <a class="btn btn-primary" href="#request">Get a free Ads Snapshot <span class="arw">&rarr;</span></a>
             <a class="btn btn-ghost on-ink" href="#options">See the &pound;750 Health Check</a>
@@ -233,45 +247,48 @@
           <input type="hidden" name="from_name" value="CBC google-ads-audit page">
           <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
           <div class="field hp"><label>Leave this empty</label><input name="bot-field"></div>
-          <span class="eyebrow"><span class="num">08</span> / Request a snapshot</span>
+          <span class="eyebrow"><span class="num">&rarr;</span> / Request a snapshot <span class="step-label" hidden>&middot; Step 1 of 2</span></span>
           <h2 style="margin:16px 0 26px;font-size:clamp(1.7rem,3vw,2.3rem)">Tell me about the account.</h2>
-          <div class="two">
-            <div class="field"><label for="f-name">Name</label><input id="f-name" type="text" name="name" placeholder="Your name" autocomplete="name" required></div>
+          <div class="step-1">
+            <div class="field"><label for="f-site">Website</label><input id="f-site" type="text" name="website" placeholder="yourcompany.co.uk" autocomplete="url" required></div>
             <div class="field"><label for="f-email">Work email</label><input id="f-email" type="email" name="email" placeholder="you@company.com" autocomplete="email" required></div>
+            <button class="btn btn-primary step-next" type="button">Continue <span class="arw">&rarr;</span></button>
           </div>
-          <div class="field"><label for="f-site">Website</label><input id="f-site" type="text" name="website" placeholder="yourcompany.co.uk" required></div>
-          <div class="field"><label for="f-tier">What are you after?</label>
-            <select id="f-tier" name="cbc_offer_requested" required>
-              <option value="" selected disabled>Select an option</option>
+          <div class="step-2">
+            <div class="field"><label for="f-name">Your name</label><input id="f-name" type="text" name="name" placeholder="First and last name" autocomplete="name" required></div>
+            <div class="field"><label for="f-tier">What are you after?</label>
+              <select id="f-tier" name="cbc_offer_requested" required>
+                <option value="" selected disabled>Select an option</option>
               <option value="ads_snapshot">Ads Snapshot (free)</option>
               <option value="ads_health_check">Google Ads Health Check (&pound;750)</option>
               <option value="not_sure">Not sure yet</option>
-            </select>
-          </div>
-          <div class="two">
-            <div class="field"><label for="f-spend">Monthly Google Ads spend</label>
-              <select id="f-spend" name="cbc_monthly_spend" required>
-                <option value="" selected disabled>Select a range</option>
+              </select>
+            </div>
+            <div class="two">
+              <div class="field"><label for="f-spend">Monthly Google Ads spend</label>
+                <select id="f-spend" name="cbc_monthly_spend" required>
+                  <option value="" selected disabled>Select a range</option>
                 <option value="under_3k">Under &pound;3,000</option>
                 <option value="3k_5k">&pound;3,000 to &pound;5,000</option>
                 <option value="5k_15k">&pound;5,000 to &pound;15,000</option>
                 <option value="15k_50k">&pound;15,000 to &pound;50,000</option>
                 <option value="over_50k">Over &pound;50,000</option>
-              </select>
-            </div>
-            <div class="field"><label for="f-who">Who looks after it today?</label>
-              <select id="f-who" name="cbc_managed_by" required>
-                <option value="" selected disabled>Select one</option>
+                </select>
+              </div>
+              <div class="field"><label for="f-who">Who looks after it today?</label>
+                <select id="f-who" name="cbc_managed_by" required>
+                  <option value="" selected disabled>Select one</option>
                 <option value="agency">An agency</option>
                 <option value="freelancer">A freelancer</option>
                 <option value="in_house">In-house team</option>
                 <option value="self">I do</option>
-              </select>
+                </select>
+              </div>
             </div>
-          </div>
           <div class="field"><label for="f-renewal">When is your agency contract up for renewal? <span class="opt">(optional)</span></label><input id="f-renewal" type="text" name="cbc_agency_renewal" placeholder="e.g. January, or not on a contract"></div>
-          <div class="field"><label for="f-msg">What is frustrating you most? <span class="opt">(optional)</span></label><textarea id="f-msg" name="message" placeholder="A line or two is plenty..."></textarea></div>
-          <button class="btn btn-primary" type="submit">Request my free snapshot <span class="arw">&rarr;</span></button>
+            <div class="field"><label for="f-msg">What is frustrating you most? <span class="opt">(optional)</span></label><textarea id="f-msg" name="message" placeholder="A line or two is plenty..."></textarea></div>
+            <button class="btn btn-primary" type="submit">Request my free snapshot <span class="arw">&rarr;</span></button>
+          </div>
           <p class="small cbc-hs-err" role="alert" hidden style="color:#b3261e">That did not send. Please email info@charliebarrett.co.uk or call 07429 873259.</p>
           <p class="small">Your details are used to reply to this request and nothing else. <a href="/privacy/">Privacy</a></p>
         </form>
@@ -341,15 +358,35 @@
 
 
 <script>
-/* Submits CBC forms to HubSpot (form "CBC website enquiry"), then redirects to the thanks page.
-   Without JavaScript the form still posts to Web3Forms as a fallback. */
+/* CBC forms: two steps. Step 1 (email + website) is saved to HubSpot straight away so an
+   abandoned form still leaves a lead; step 2 sends everything and redirects to the thanks page.
+   Without JavaScript the whole form shows at once and posts to Web3Forms as a fallback. */
 (function(){
   var ENDPOINT='https://api.hsforms.com/submissions/v3/integration/submit/148889017/5f563190-abd8-4d8e-b6d5-9d3eb68ebe03';
   function cookie(n){var m=document.cookie.match('(^|;)\s*'+n+'=([^;]*)');return m?decodeURIComponent(m[2]):undefined;}
+  function send(fields){
+    var ctx={pageUri:location.href,pageName:document.title};var hutk=cookie('hubspotutk');if(hutk){ctx.hutk=hutk;}
+    return fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:fields,context:ctx})})
+      .then(function(r){if(!r.ok){throw new Error(r.status);}return r;});
+  }
+  function valid(box){var ok=true;box.querySelectorAll('input,select,textarea').forEach(function(el){if(ok&&!el.checkValidity()){el.reportValidity();ok=false;}});return ok;}
   document.querySelectorAll('form.cbc-hs').forEach(function(f){
+    var s1=f.querySelector('.step-1'),s2=f.querySelector('.step-2'),label=f.querySelector('.step-label');
+    f.setAttribute('novalidate','');
+    s2.hidden=true; if(label){label.hidden=false;}
+    function bot(){return f.querySelector('[name="bot-field"]').value||f.querySelector('[name="botcheck"]').checked;}
+    function next(){
+      if(!valid(s1)){return;}
+      if(!bot()){send([{name:'email',value:f.elements['email'].value},{name:'website',value:f.elements['website'].value}]).catch(function(){});}
+      s1.hidden=true;s2.hidden=false;if(label){label.textContent='Step 2 of 2';}
+      var first=s2.querySelector('input,select,textarea');if(first){first.focus();}
+      if(typeof gtag==='function'){gtag('event','form_step_1',{form_name:f.getAttribute('name')});}
+    }
+    f.querySelector('.step-next').addEventListener('click',next);
     f.addEventListener('submit',function(e){
-      if(f.querySelector('[name="bot-field"]').value||f.querySelector('[name="botcheck"]').checked){e.preventDefault();return;}
       e.preventDefault();
+      if(s2.hidden){next();return;}
+      if(bot()||!valid(s2)){return;}
       var btn=f.querySelector('button[type="submit"]');btn.disabled=true;
       var err=f.querySelector('.cbc-hs-err');err.hidden=true;
       var name=(f.elements['name'].value||'').trim().split(/\s+/);
@@ -357,9 +394,7 @@
       ['email','website','cbc_offer_requested','cbc_monthly_spend','cbc_managed_by','cbc_agency_renewal','message'].forEach(function(k){
         var el=f.elements[k];if(el&&el.value){fields.push({name:k,value:el.value});}
       });
-      var ctx={pageUri:location.href,pageName:document.title};var hutk=cookie('hubspotutk');if(hutk){ctx.hutk=hutk;}
-      fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:fields,context:ctx})})
-        .then(function(r){if(!r.ok){throw new Error(r.status);}location.href=f.getAttribute('data-redirect');})
+      send(fields).then(function(){location.href=f.getAttribute('data-redirect');})
         .catch(function(){btn.disabled=false;err.hidden=false;});
     });
   });

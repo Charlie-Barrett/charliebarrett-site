@@ -30,24 +30,42 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css">
+<script src="/assets/nav.js" defer></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Charlie Barrett Consulting","url":"https://www.charliebarrett.co.uk/","email":"info@charliebarrett.co.uk","telephone":"+44 7429 873259","image":"https://www.charliebarrett.co.uk/assets/og.png","description":"Senior marketing leadership for founder-led industrial and technical B2B businesses. Strategy, systems and execution that connect marketing to sales, without the full-time hire.","founder":{"@type":"Person","name":"Charlie Barrett","jobTitle":"Fractional Marketing Consultant"}}
-</script></head>
+</script><style>
+  .leak{padding:64px 0 72px;border-bottom:1px solid var(--line)}
+  .doors{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .door{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:5px;padding:34px 32px 28px;text-decoration:none;color:var(--ink);transition:.2s ease}
+  .door:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--accent)}
+  .door .k{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .door h3{font-size:1.5rem;margin-bottom:12px}
+  .door p{color:#40506b}
+  .door .go{margin-top:auto;padding-top:22px;font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase}
+  @media(max-width:900px){.doors{grid-template-columns:1fr}.leak{padding:48px 0 56px}}
+</style>
+</head>
 <body>
 
 <header class="nav">
   <div class="wrap nav-inner">
     <a class="nav-mark" href="/" aria-label="Charlie Barrett Consulting home" style="text-decoration:none"><span class="mark">cbc<span class="dot"></span></span></a>
-    <nav class="nav-cta">
+    <nav class="nav-cta" aria-label="Main">
       <div class="nav-links">
-        <a href="/services/">Services</a>
-        <a href="/seo-health-check/">SEO &amp; GEO</a>
-        <a href="/google-ads-audit/">Google Ads</a>
-        <a href="/growth-sprint/">Growth Sprint</a>
+        <details class="nav-drop">
+          <summary>Services</summary>
+          <div class="nav-menu">
+            <a href="/free-snapshot/"><b>Free Snapshot</b><span>SEO or Google Ads review, no cost</span></a>
+            <a href="/seo-health-check/"><b>SEO &amp; GEO Health Check</b><span>Free snapshot, then &pound;750</span></a>
+            <a href="/google-ads-audit/"><b>Google Ads Audit</b><span>Free snapshot, then &pound;750</span></a>
+            <a href="/growth-sprint/"><b>Growth Sprint</b><span>90 days, from &pound;2,500 a month</span></a>
+            <a href="/services/#ongoing"><b>Ongoing support</b><span>Fractional leadership and advisory</span></a>
+          </div>
+        </details>
         <a href="/about/">About</a>
         <a href="/contact/">Contact</a>
       </div>
-      <a class="btn btn-primary" href="https://calendly.com/charliebarrett-info/30min" target="_blank" rel="noopener">Free scoping call</a>
+      <a class="btn btn-primary" href="/free-snapshot/">Get a free snapshot</a>
     </nav>
   </div>
 </header>
@@ -62,8 +80,8 @@
           <h1 style="margin-top:30px;max-width:20ch">Senior marketing leadership for businesses that have grown on sales alone.</h1>
           <p class="lead" style="margin-top:28px">The strategy, systems and execution of a full marketing team, without the full-time hire.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="https://calendly.com/charliebarrett-info/30min" target="_blank" rel="noopener">Book a free scoping call <span class="arw">&rarr;</span></a>
-            <a class="btn btn-ghost on-ink" href="/services/">See how it works</a>
+            <a class="btn btn-primary" href="/free-snapshot/">Get a free snapshot <span class="arw">&rarr;</span></a>
+            <a class="btn btn-ghost on-ink" href="https://calendly.com/charliebarrett-info/30min" target="_blank" rel="noopener">Or book a scoping call</a>
           </div>
         </div>
         <div class="hero-side">
@@ -72,6 +90,30 @@
           <div class="hero-stat"><div class="vt">Systems you own</div><div class="vd">We build it, your team runs it</div></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="leak">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:28px">
+        <span class="eyebrow"><span class="num">&rarr;</span> / Start here</span>
+        <h2>Where is your marketing leaking?</h2>
+      </div>
+      <div class="doors">
+        <a class="door" href="/seo-health-check/">
+          <div class="k">Free SEO &amp; GEO snapshot</div>
+          <h3>Customers cannot find us in search.</h3>
+          <p>Where you rank, whether AI answers name you or a competitor, and the three fixes worth doing first.</p>
+          <div class="go">Check my search visibility <span class="arw">&rarr;</span></div>
+        </a>
+        <a class="door" href="/google-ads-audit/">
+          <div class="k">Free Google Ads snapshot</div>
+          <h3>We spend on ads and are not sure it is working.</h3>
+          <p>What your ads are really buying, who you compete with, and what to ask whoever runs the account.</p>
+          <div class="go">Check my Google Ads <span class="arw">&rarr;</span></div>
+        </a>
+      </div>
+      <p class="svc-note">Further along? <a href="/growth-sprint/" style="color:inherit">See the 90-day Growth Sprint</a> or <a href="/services/" style="color:inherit">all services</a>.</p>
     </div>
   </section>
 

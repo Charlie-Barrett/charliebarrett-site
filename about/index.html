@@ -30,22 +30,29 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css">
+<script src="/assets/nav.js" defer></script>
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap nav-inner">
     <a class="nav-mark" href="/" aria-label="Charlie Barrett Consulting home" style="text-decoration:none"><span class="mark">cbc<span class="dot"></span></span></a>
-    <nav class="nav-cta">
+    <nav class="nav-cta" aria-label="Main">
       <div class="nav-links">
-        <a href="/services/">Services</a>
-        <a href="/seo-health-check/">SEO &amp; GEO</a>
-        <a href="/google-ads-audit/">Google Ads</a>
-        <a href="/growth-sprint/">Growth Sprint</a>
+        <details class="nav-drop">
+          <summary>Services</summary>
+          <div class="nav-menu">
+            <a href="/free-snapshot/"><b>Free Snapshot</b><span>SEO or Google Ads review, no cost</span></a>
+            <a href="/seo-health-check/"><b>SEO &amp; GEO Health Check</b><span>Free snapshot, then &pound;750</span></a>
+            <a href="/google-ads-audit/"><b>Google Ads Audit</b><span>Free snapshot, then &pound;750</span></a>
+            <a href="/growth-sprint/"><b>Growth Sprint</b><span>90 days, from &pound;2,500 a month</span></a>
+            <a href="/services/#ongoing"><b>Ongoing support</b><span>Fractional leadership and advisory</span></a>
+          </div>
+        </details>
         <a class="active" href="/about/">About</a>
         <a href="/contact/">Contact</a>
       </div>
-      <a class="btn btn-primary" href="https://calendly.com/charliebarrett-info/30min" target="_blank" rel="noopener">Free scoping call</a>
+      <a class="btn btn-primary" href="/free-snapshot/">Get a free snapshot</a>
     </nav>
   </div>
 </header>

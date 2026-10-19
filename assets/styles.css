@@ -290,9 +290,25 @@
     .nav-inner:not(:has(.nav-links)){padding-bottom:12px}
   }
 
-  /* six-item nav: keep one row, scroll sideways on narrow screens */
+  /* Services dropdown (four-item nav) */
+  .nav-drop{position:relative}
+  .nav-drop summary{list-style:none;cursor:pointer;font-family:var(--mono);font-size:.76rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:6px 0;display:inline-flex;align-items:center;gap:8px;position:relative;transition:color .15s}
+  .nav-drop summary::-webkit-details-marker{display:none}
+  .nav-drop summary::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .15s}
+  .nav-drop[open] summary::after{transform:rotate(-135deg) translateY(-1px)}
+  .nav-drop summary:hover,.nav-drop[open] summary,.nav-drop summary.active{color:var(--ink)}
+  .nav-drop summary.active::before{content:"";position:absolute;left:0;right:14px;bottom:-2px;height:2px;background:var(--accent)}
+  .nav-drop summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .nav-menu{position:absolute;top:calc(100% + 14px);left:-22px;z-index:60;min-width:320px;background:var(--white);border:1px solid var(--line);border-radius:5px;box-shadow:var(--shadow);padding:10px;display:grid;gap:2px}
+  .nav-menu a{display:block;padding:12px 14px;border-radius:3px;text-decoration:none;text-transform:none;letter-spacing:0;font-family:var(--body);color:var(--ink)}
+  .nav-menu a::after{display:none}
+  .nav-menu a:hover,.nav-menu a:focus-visible{background:var(--paper);outline:none}
+  .nav-menu b{display:block;font-family:var(--display);font-weight:700;font-size:1rem;letter-spacing:-.01em}
+  .nav-menu span{display:block;font-size:.85rem;color:var(--muted);margin-top:2px}
+  .nav-menu a:first-child{border-left:3px solid var(--accent);padding-left:11px}
   @media(max-width:900px){
-    .nav-links{justify-content:flex-start;gap:22px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-    .nav-links::-webkit-scrollbar{display:none}
-    .nav-links a{flex:0 0 auto}
+    .nav-links{justify-content:flex-start;gap:28px}
+    .nav-drop{position:static}
+    .nav-drop summary{font-size:.72rem;padding:4px 0}
+    .nav-menu{left:20px;right:20px;top:100%;min-width:0}
   }
