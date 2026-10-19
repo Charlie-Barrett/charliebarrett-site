@@ -236,7 +236,7 @@
           </div>
           <p style="margin-top:30px;color:#c7cedb">Or send the form and I will come back with times. <a href="mailto:info@charliebarrett.co.uk" style="color:var(--accent)">info@charliebarrett.co.uk</a> &middot; <a href="tel:+447429873259" style="color:var(--accent)">07429 873259</a></p>
         </div>
-        <form class="form" name="growth-sprint" method="POST" action="https://api.web3forms.com/submit">
+        <form class="form cbc-hs" name="growth-sprint" method="POST" action="https://api.web3forms.com/submit" data-redirect="/growth-sprint/thanks/">
           <input type="hidden" name="access_key" value="af02da2e-a358-4b22-9d80-6721ae559396">
           <input type="hidden" name="redirect" value="https://www.charliebarrett.co.uk/growth-sprint/thanks/">
           <input type="hidden" name="subject" value="Growth Sprint scoping request from charliebarrett.co.uk">
@@ -251,37 +251,38 @@
           </div>
           <div class="field"><label for="f-site">Website</label><input id="f-site" type="text" name="website" placeholder="yourcompany.co.uk" required></div>
           <div class="field"><label for="f-tier">Package you are considering</label>
-            <select id="f-tier" name="option" required>
+            <select id="f-tier" name="cbc_offer_requested" required>
               <option value="" selected disabled>Select an option</option>
-              <option>Not sure yet</option>
-              <option>Foundation (&pound;2,500 a month)</option>
-              <option>Growth (&pound;5,000 a month)</option>
-              <option>Scale (&pound;8,000 a month)</option>
+              <option value="not_sure">Not sure yet</option>
+              <option value="sprint_foundation">Foundation (&pound;2,500 a month)</option>
+              <option value="sprint_growth">Growth (&pound;5,000 a month)</option>
+              <option value="sprint_scale">Scale (&pound;8,000 a month)</option>
             </select>
           </div>
           <div class="two">
             <div class="field"><label for="f-spend">Monthly marketing spend</label>
-              <select id="f-spend" name="monthly_spend" required>
+              <select id="f-spend" name="cbc_monthly_spend" required>
                 <option value="" selected disabled>Select a range</option>
-                <option>Under &pound;3,000</option>
-                <option>&pound;3,000 to &pound;5,000</option>
-                <option>&pound;5,000 to &pound;15,000</option>
-                <option>&pound;15,000 to &pound;50,000</option>
-                <option>Over &pound;50,000</option>
+                <option value="under_3k">Under &pound;3,000</option>
+                <option value="3k_5k">&pound;3,000 to &pound;5,000</option>
+                <option value="5k_15k">&pound;5,000 to &pound;15,000</option>
+                <option value="15k_50k">&pound;15,000 to &pound;50,000</option>
+                <option value="over_50k">Over &pound;50,000</option>
               </select>
             </div>
             <div class="field"><label for="f-who">Who looks after it today?</label>
-              <select id="f-who" name="managed_by" required>
+              <select id="f-who" name="cbc_managed_by" required>
                 <option value="" selected disabled>Select one</option>
-                <option>An agency</option>
-                <option>A freelancer</option>
-                <option>In-house team</option>
-                <option>I do</option>
+                <option value="agency">An agency</option>
+                <option value="freelancer">A freelancer</option>
+                <option value="in_house">In-house team</option>
+                <option value="self">I do</option>
               </select>
             </div>
           </div>
           <div class="field"><label for="f-msg">What would success look like? <span class="opt">(optional)</span></label><textarea id="f-msg" name="message" placeholder="A line or two is plenty..."></textarea></div>
           <button class="btn btn-primary" type="submit">Book my scoping call <span class="arw">&rarr;</span></button>
+          <p class="small cbc-hs-err" role="alert" hidden style="color:#b3261e">That did not send. Please email info@charliebarrett.co.uk or call 07429 873259.</p>
           <p class="small">Your details are used to reply to this request and nothing else. <a href="/privacy/">Privacy</a></p>
         </form>
       </div>
@@ -327,5 +328,31 @@
   </div>
 </footer>
 
+
+<script>
+/* Submits CBC forms to HubSpot (form "CBC website enquiry"), then redirects to the thanks page.
+   Without JavaScript the form still posts to Web3Forms as a fallback. */
+(function(){
+  var ENDPOINT='https://api.hsforms.com/submissions/v3/integration/submit/148889017/5f563190-abd8-4d8e-b6d5-9d3eb68ebe03';
+  function cookie(n){var m=document.cookie.match('(^|;)\s*'+n+'=([^;]*)');return m?decodeURIComponent(m[2]):undefined;}
+  document.querySelectorAll('form.cbc-hs').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      if(f.querySelector('[name="bot-field"]').value||f.querySelector('[name="botcheck"]').checked){e.preventDefault();return;}
+      e.preventDefault();
+      var btn=f.querySelector('button[type="submit"]');btn.disabled=true;
+      var err=f.querySelector('.cbc-hs-err');err.hidden=true;
+      var name=(f.elements['name'].value||'').trim().split(/\s+/);
+      var fields=[{name:'firstname',value:name.shift()||''},{name:'lastname',value:name.join(' ')}];
+      ['email','website','cbc_offer_requested','cbc_monthly_spend','cbc_managed_by','cbc_agency_renewal','message'].forEach(function(k){
+        var el=f.elements[k];if(el&&el.value){fields.push({name:k,value:el.value});}
+      });
+      var ctx={pageUri:location.href,pageName:document.title};var hutk=cookie('hubspotutk');if(hutk){ctx.hutk=hutk;}
+      fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:fields,context:ctx})})
+        .then(function(r){if(!r.ok){throw new Error(r.status);}location.href=f.getAttribute('data-redirect');})
+        .catch(function(){btn.disabled=false;err.hidden=false;});
+    });
+  });
+})();
+</script>
 </body>
 </html>
